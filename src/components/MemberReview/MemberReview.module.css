@@ -1,0 +1,205 @@
+.member_review_container {
+    /* OK. */
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.member_review_card {
+    /* OK. */
+    flex: 0 0 calc(33.33% - 20px);
+    border: 0.16px dotted var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    position: relative;
+    transition: box-shadow 0.3s ease;
+}
+
+.member_review_card:hover {
+    /* OK. */
+    box-shadow: 0 5px 10px var(--border-color);
+    /* border: 1.16px solid rgba(156, 170, 246, 0.3);
+    border-radius: 20px;
+    box-shadow: 10px 20px 40px rgba(156, 170, 246, 0.3);
+    backdrop-filter: blur(10px);
+    background: rgba(156, 170, 246, 0.2); */
+}
+
+.member_review_card::before {
+    /* OK. */
+    content: "❝❞";
+    font-size: 56px;
+    /*36px*/
+    position: absolute;
+    /* top: -20px;
+    right: 10px; */
+    top: -20px;
+    right: 25px;
+    color: #685cfa;
+    z-index: 1;
+    /* box-shadow: 0 2px 4px rgba(156, 170, 246, 0.4);
+    backdrop-filter: blur(10px);
+    background: rgba(156, 170, 246, 0.7);
+    border-radius: 50%; */
+    backdrop-filter: blur(10px);
+    border: 0.16px dotted var(--border-color);
+    border-radius: 50%;
+    /* width: 40px;
+    height: 40px;
+    margin: 5px; */
+    width: 60px;
+    height: 60px;
+    margin: -10px;
+}
+
+.member_review_user_image .member_review_image {
+    /* width: 80px;
+    height: 80px; */
+    width: 145px;
+    height: 145px;
+    border: 0.16px dotted var(--border-color);
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+    margin: 5px;
+}
+
+.member_review_user_image {
+    display: flex;
+    align-items: flex-start;
+}
+
+.member_review_user_info {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.member_review_name {
+    width: 95%;
+    font-family: var(--font);
+    font-size: 25px;
+    /*23px*/
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px;
+    padding: 5px 0;
+}
+
+.member_review_text {
+    /* OK. */
+    text-align: left;
+    font-size: 18px;
+}
+
+.member_review_star {
+    /* OK. */
+    font-size: 23px;
+    color: #ffcc00;
+    margin-right: 5px;
+    padding-bottom: 5px;
+}
+
+.member_review_span {
+    /* OK. */
+    font-size: 18px;
+    font-weight: 200;
+}
+
+/* Responsividades. */
+/* Estilos específicos para resolução de 320x568. */
+@media screen and (max-width: 320px) and (min-height: 568px) {
+    .member_review_container {
+        /* OK. */
+        max-width: 1300px;
+        gap: 50px;
+    }
+
+    .member_review_card {
+        flex: 0 0 calc(33.33% - 20px);
+        border: 0.16px dotted var(--border-color);
+        padding: 25px 60px;
+        /* OK. */
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+    }
+
+    .member_review_card::before {
+        content: "❝❞";
+        font-size: 56px;
+        /*36px*/
+        position: absolute;
+        top: -20px;
+        right: 25px;
+        color: #685cfa;
+        z-index: 1;
+        backdrop-filter: blur(10px);
+        border: 0.16px dotted var(--border-color);
+        border-radius: 50%;
+        /* width: 40px;
+    height: 40px;
+    margin: 5px; */
+        width: 60px;
+        height: 60px;
+        margin: -10px;
+    }
+
+    .member_review_user_image .member_review_image {
+        /* width: 80px;
+    height: 80px; */
+        width: 145px;
+        height: 145px;
+        border: 0.16px dotted var(--border-color);
+        border-radius: 50%;
+        margin-bottom: 10px;
+        object-fit: cover;
+        margin: 5px;
+    }
+
+    .member_review_user_image {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .member_review_user_info {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+    }
+
+    .member_review_name {
+        width: 95%;
+        font-family: var(--font);
+        font-size: 25px;
+        /*23px*/
+        text-align: center;
+        text-transform: uppercase;
+        margin: 10px;
+        padding: 5px 0;
+    }
+
+    .member_review_text {
+        text-align: left;
+        font-size: 18px;
+        background-color: green;
+        margin: 0 -50px;
+    }
+
+    .member_review_star {
+        /* Voltar aquiOK. */
+        font-size: 23px;
+        color: #ffcc00;
+    }
+
+    .member_review_span {
+        /* OK. */
+        margin: 0 -50px;
+    }
+}
