@@ -6,6 +6,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
+    padding-top: 60px;
 }
 
 .member_review_card {
