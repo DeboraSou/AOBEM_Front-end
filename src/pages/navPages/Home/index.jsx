@@ -271,12 +271,19 @@ function Home() {
 
 
                 {/* Ranking. */}
+                {/* Title and introduction. */}
+                <section className={styles.home_expert_hanking_intro}>
+                    <article className={styles.home_expert_hanking_intro_container}>
+                        <div className={styles.home_expert_hanking_intro_text}>
+                            <h2 className={styles.home_expert_hanking_intro_title}>Ranking dos Melhores Especialistas</h2>
+                            <p>Apresentamos os três especialistas mais bem avaliados pelos membros da nossa comunidade. Descubra profissionais altamente qualificados e confiáveis prontos para ajudá-lo a alcançar seus objetivos. Conheça suas especialidades, avaliações e biografias abaixo.</p>
+                        </div>
+                    </article>
+                </section>
+
                 <section className={styles.home_expert_hanking}>
                     <article className={styles.home_expert_hanking_container}>
-                        <div className={styles.home_expert_hanking_text}>
-                            <h2 className={styles.home_expert_hanking_title}>Ranking dos Melhores Especialistas</h2>
-                            <ExpertHanking />
-                        </div>
+                        <ExpertHanking />
                     </article>
                 </section>
 
@@ -285,6 +292,7 @@ function Home() {
                     <article className={styles.home_member_review_container}>
                         <div className={styles.home_member_review_text}>
                             <h2 className={styles.home_member_review_title}>Avaliação dos Membros</h2>
+                            <p>Aqui estão alguns depoimentos sinceros e avaliações dos nossos membros sobre os especialistas que os ajudaram em suas jornadas. Veja o que nossos clientes têm a dizer sobre suas experiências e os resultados alcançados.</p>
                             <MemberReview />
                         </div>
                     </article>
@@ -293,7 +301,7 @@ function Home() {
 
 
                 {/* Call to register. */}
-                {/* <section className={styles.home_call_register}>
+                <section className={styles.home_call_register}>
                     <article className={styles.home_call_register_container}>
                         <div className={styles.home_call_register_text}>
                             <h3 className={styles.home_call_register_title}>Junte-se a nós nessa jornada de Acolhimento e Orientação</h3>
@@ -303,7 +311,7 @@ function Home() {
                             </Button>
                         </div>
                     </article>
-                </section> */}
+                </section>
 
                 {/* Faq. */}
                 {/* <div className={styles.home_faq}>
