@@ -682,6 +682,50 @@
     border-radius: 50%;
 }
 
+/* Ranking: Title and introduction. */
+.home_expert_hanking_intro {
+    border: 1px solid red;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home_expert_hanking_intro_container {
+    border: 1px solid blue;
+    width: 90vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.home_expert_hanking_intro_text {
+    border: 1px solid green;
+    width: 95%;
+    padding-right: 20px;
+    font-family: var(--font);
+    font-size: 20px;
+    text-align: left;
+    justify-content: left;
+}
+
+.home_expert_hanking_intro_title {
+    border: 1px solid orange;
+    color: #685cfa;
+    font-size: 30px;
+    letter-spacing: 3px;
+    font-family: var(--font);
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
 /* Ranking. */
 .home_expert_hanking {
     border: 1px solid red;
@@ -703,34 +747,6 @@
     align-items: center;
     gap: 20px;
 }
-
-.home_expert_hanking_text {
-    border: 1px solid green;
-    width: 95%;
-    padding-right: 20px;
-    font-family: var(--font);
-    font-size: 18px;
-    /* 15px */
-    text-align: left;
-    justify-content: left;
-    margin-bottom: 20px;
-}
-
-.home_expert_hanking_title {
-    border: 1px solid orange;
-    color: #685cfa;
-    font-size: 30px;
-    letter-spacing: 3px;
-    font-family: var(--font);
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: left;
-    margin-bottom: 30px;
-}
-
-
-
-
 
 /* Review. */
 .home_member_review {
@@ -763,7 +779,6 @@
     /* 18px */
     text-align: left;
     justify-content: left;
-    margin-bottom: 20px;
 }
 
 .home_member_review_title {
@@ -1186,15 +1201,47 @@
         font-size: 40px;
     }
 
+
+    /* Ranking: Title and introduction. */
+    .home_expert_hanking_intro {
+        /* OK. */
+        border: 1px solid white;
+        width: 310px;
+        height: 60vh;
+    }
+
+    .home_expert_hanking_intro_container {
+        /* OK. */
+        border: 1px solid blue;
+        width: 310px;
+        height: 60vh;
+    }
+
+    .home_expert_hanking_intro_text {
+        /* OK. */
+        border: 1px solid green;
+        width: 90%;
+        height: auto;
+        padding-right: none;
+        font-size: 15px;
+    }
+
+    .home_expert_hanking_intro_title {
+        /* OK. */
+        border: 1px solid orange;
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
     /* Ranking. */
     .home_expert_hanking {
         /* OK. */
-        border: 1px solid red;
+        border: 1px solid white;
         flex-direction: column;
         justify-content: space-between;
         width: 310px;
         height: auto;
-        padding-top: 1310px;
+        padding-top: 1110px;
         padding-bottom: 1300px;
     }
 
@@ -1205,23 +1252,6 @@
         height: 100vh;
     }
 
-    .home_expert_hanking_text {
-        /* OK. */
-        border: 1px solid green;
-        width: 90%;
-        height: auto;
-    }
-
-    .home_expert_hanking_title {
-        /* OK. */
-        border: 1px solid orange;
-        font-size: 20px;
-        letter-spacing: 2px;
-    }
-
-
-
-
     /* Review. */
     .home_member_review {
         /* OK. */
@@ -1230,8 +1260,8 @@
         justify-content: space-between;
         width: 310px;
         height: auto;
-        padding-top: 1230px;
-        padding-bottom: 1220px;
+        padding-top: 400px;
+        padding-bottom: 620px;
     }
 
     .home_member_review_container {
@@ -1246,6 +1276,7 @@
         border: 1px solid green;
         width: 90%;
         height: auto;
+        font-size: 15px;
     }
 
     .home_member_review_title {
@@ -1254,7 +1285,6 @@
         font-size: 20px;
         letter-spacing: 2px;
     }
-
 }
 
 /* Estilos específicos para resolução de 375x667. */
