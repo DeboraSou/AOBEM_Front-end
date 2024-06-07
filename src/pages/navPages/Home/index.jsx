@@ -1,7 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom'
-// import { useSpring, config, animated } from 'react-spring';
-import { useInView } from 'react-intersection-observer';
 import styles from './Home.module.css'
 import CareCard from '../../../components/CareCard';
 import ScrollTop from '../../../components/ScrollTop';
@@ -94,7 +91,6 @@ function Home() {
         <>
             <ScrollTop />
             <div>
-
                 <section className={`${styles.home_preloader} ${loading ? '' : styles.home_hide}`}>
                     <div className={styles.home_loader}>{showAobem ? 'aobem' : ''}</div>
                 </section>
@@ -103,7 +99,6 @@ function Home() {
                 <section className={styles.home_hero}>
                     <article className={styles.home_hero_container} style={{ opacity: loading ? 0 : 1 }}>
                         <img src="src/assets/hero.svg" alt="Terapia online" title='Terapia online' className={styles.home_hero_img} />
-                        {/* <img src="src/assets/hero.gif" alt="Terapia online" title='Terapia online' className={styles.home_hero_img} /> */}
                         <h1 className={styles.home_hero_title}>Encontre <span className={styles.home_hero_span}>Apoio Emocional</span> Online</h1>
                         <h2 className={styles.home_hero_caption}>Terapia online acessível quando você precisar. Comece hoje mesmo.</h2>
                         <Button to="/especialistas" aria-label="Conheça nossos especialistas">Começar Agora</Button>
@@ -119,7 +114,6 @@ function Home() {
                             <Button to="/sobre" aria-label="Saiba mais sobre nós">Saiba Quem Somos</Button>
                         </div>
                         <img src="src/assets/team_work.svg" alt="Trabalho em grupo" title='Trabalho em grupo' className={styles.home_about_img} />
-                        {/* <img src="src/assets/team_work.gif" alt="Trabalho em grupo" title='Trabalho em grupo' className={styles.home_about_img} /> */}
                     </article>
                 </section>
 
@@ -129,11 +123,9 @@ function Home() {
                         <div className={styles.home_importance_text}>
                             <h3 className={styles.home_importance_title}>Cuidado Mental</h3>
                             <p>O cuidado mental é fundamental para a saúde e bem-estar geral de uma pessoa, sendo uma parte essencial da saúde holística. Aqui estão alguns pontos sobre a <span className={styles.home_importance_span}>importância</span> e <span className={styles.home_importance_span}>benefícios</span> do cuidado mental:</p><br />
-
                             <div className={styles.home_importance_cards_container}>
                                 <CareCard />
                             </div>
-
                             <p>Priorizar o cuidado mental é uma parte essencial da busca por uma vida equilibrada e saudável. Isso não apenas impacta o indivíduo, mas também contribui para a construção de comunidades mais resilientes e compreensivas.</p>
                         </div>
                     </article>
@@ -172,13 +164,11 @@ function Home() {
                 <section className={styles.home_how_it_works}>
                     <div className={styles.home_how_it_works_container}>
                         <div className={styles.home_how_it_works_time_line}>
-
                             {/* Seleção de especialistas. */}
                             <article className={styles.home_how_it_works_section} style={{ '--animationDelay': '1s' }}>
                                 <span className={styles.home_how_it_works_span}>1º Passo</span>
                                 <div className={styles.home_how_it_works_text_content}>
                                     <div className={styles.how_it_works_text}>
-                                        {/* <span>1º Etapa</span> */}
                                         <h3 className={styles.how_it_works_title}>Seleção de Especialistas</h3>
                                         <p>Os membros têm a oportunidade de procurar especialistas de saúde mental que melhor se adequem às suas necessidades. Podem filtrar os resultados com base em critérios como especialização, localização e modalidade de atendimento (presencial ou online).</p>
                                     </div>
@@ -209,7 +199,6 @@ function Home() {
                                     <img src="src/assets/surf.svg" alt="Navegar no site" title='Navegar no site' className={styles.home_how_it_works_img} />
                                 </div>
                             </article>
-
                         </div>
                     </div>
                 </section>
@@ -227,13 +216,11 @@ function Home() {
                 <section className={styles.home_how_it_works_expert}>
                     <div className={styles.home_how_it_works_container_expert}>
                         <div className={styles.home_how_it_works_time_line}>
-
-                            {/* Seleção de especialistas. */}
+                            {/* Recepção de solicitações. */}
                             <article className={styles.home_how_it_works_section} style={{ '--animationDelay': '1s' }}>
                                 <span className={styles.home_how_it_works_span}>1º Passo</span>
                                 <div className={styles.home_how_it_works_text_content}>
                                     <div className={styles.how_it_works_text}>
-                                        {/* <span>1º Etapa</span> */}
                                         <h3 className={styles.how_it_works_title}>Recepção de Solicitações</h3>
                                         <p>Os especialistas recebem notificações sobre as solicitações de consulta dos membros interessados. Eles têm acesso às informações fornecidas pelos clientes e podem revisar cuidadosamente cada solicitação antes de tomar uma decisão.</p>
                                     </div>
@@ -264,11 +251,9 @@ function Home() {
                                     <img src="src/assets/contact.svg" alt="Entrando em contato" title='Entrando em contato' className={styles.home_how_it_works_img} />
                                 </div>
                             </article>
-
                         </div>
                     </div>
                 </section>
-
 
                 {/* Ranking. */}
                 {/* Title and introduction. */}
@@ -280,7 +265,6 @@ function Home() {
                         </div>
                     </article>
                 </section>
-
                 <section className={styles.home_expert_hanking}>
                     <article className={styles.home_expert_hanking_container}>
                         <ExpertHanking />
@@ -288,17 +272,20 @@ function Home() {
                 </section>
 
                 {/* Review. */}
-                <section className={styles.home_member_review}>
-                    <article className={styles.home_member_review_container}>
-                        <div className={styles.home_member_review_text}>
-                            <h2 className={styles.home_member_review_title}>Avaliação dos Membros</h2>
+                {/* Title and introduction. */}
+                <section className={styles.home_member_review_intro}>
+                    <article className={styles.home_member_review_intro_container}>
+                        <div className={styles.home_member_review_intro_text}>
+                            <h2 className={styles.home_member_review_intro_title}>Avaliação dos Membros</h2>
                             <p>Aqui estão alguns depoimentos sinceros e avaliações dos nossos membros sobre os especialistas que os ajudaram em suas jornadas. Veja o que nossos clientes têm a dizer sobre suas experiências e os resultados alcançados.</p>
-                            <MemberReview />
                         </div>
                     </article>
                 </section>
-
-
+                <section className={styles.home_member_review}>
+                    <article className={styles.home_member_review_container}>
+                        <MemberReview />
+                    </article>
+                </section>
 
                 {/* Call to register. */}
                 <section className={styles.home_call_register}>
@@ -313,31 +300,15 @@ function Home() {
                     </article>
                 </section>
 
-                {/* Faq. */}
-                {/* <div className={styles.home_faq}>
-                    <div className={styles.home_faq_container}>
-                        <img src="src/assets/faq.svg" alt="Perguntas Frequentes" title='Perguntas Frequentes' className={styles.home_faq_img} />
-                        <div className={styles.home_faq_text}>                            
-                            <section className={styles.home_importance_cards_container}>
-                                <Faq />
-                            </section>
-                        </div>
-                    </div>
-                </div> */}
-
-
                 {/* Warning. */}
                 <section className={styles.home_warning}>
                     <article className={styles.home_warning_container}>
                         <p className={styles.home_warning_text}>
-                            <span><FiAlertTriangle className={styles.home_warning_icon} title='Atenção!' /></span>Este site não oferece tratamento ou aconselhamento imediato para pessoas em crise suicida. Em caso de crise, ligue para 188 (CVV) ou acesse o site www.cvv.org.br. Em caso de emergência, procure atendimento em um hospital mais próximo.
+                            <span><FiAlertTriangle className={styles.home_warning_icon} title='Atenção!' /></span>Este site não oferece tratamento ou aconselhamento imediato para pessoas em crise suicida. Em caso de crise, ligue para <strong>188</strong> (CVV) ou acesse o site <a className={styles.home_warning_link} href="https://cvv.org.br/" target='_blank' rel='noopener noreferrer'>www.cvv.org.br</a> Em caso de emergência, procure atendimento em um hospital mais próximo.
                         </p>
                     </article>
                 </section>
-
             </div>
-
-
         </>
     );
 }
