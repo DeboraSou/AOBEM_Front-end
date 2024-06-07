@@ -1,5 +1,4 @@
 import styles from './MemberReview.module.css'
-
 import { FaStar } from "react-icons/fa"; <FaStar />
 import { FaStarHalfAlt } from "react-icons/fa"; <FaStarHalfAlt />
 import { FaRegStar } from "react-icons/fa"; <FaRegStar />
@@ -41,7 +40,7 @@ function MemberReview() {
             id: 2,
             image: 'src/assets/bernardo_p.png',
             name: 'Dmitry',
-            rating: 4.5,
+            rating: 3.5,
             date: '2024/05/28',
             message: 'O tratamento com o Dr. Taddini melhorou significativamente meu desempenho no esporte. Ele é incrível!'
         },
@@ -49,7 +48,7 @@ function MemberReview() {
             id: 3,
             image: 'src/assets/martin_p.png',
             name: 'Matteo',
-            rating: 4,
+            rating: 2.5,
             date: '2024/05/25',
             message: 'Estou extremamente grato pela orientação da Dra. Vogel em um momento tão desafiador.'
         },
