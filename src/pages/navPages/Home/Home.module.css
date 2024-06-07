@@ -56,7 +56,7 @@
 
 /* Hero. */
 .home_hero {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     top: 0;
     left: 0;
     width: 99vw;
@@ -64,7 +64,7 @@
 }
 
 .home_hero_container {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 90vw;
     height: 100vh;
     display: flex;
@@ -76,9 +76,7 @@
 .home_hero_img {
     opacity: 0.6;
     width: 700px;
-    /*900*/
     display: block;
-    /* padding-top: 140px; */
     transition: opacity 0.9s ease-in;
 }
 
@@ -88,7 +86,7 @@
 
 /* .home_hero_img {
     position: absolute;
-    opacity: 0.5;
+    opacity: 0.3;
     width: 1000px;
     display: block;
     z-index: -3;
@@ -97,14 +95,12 @@
 
 .home_hero_title {
     font-size: 6rem;
-    /*3rem*/
     letter-spacing: 3px;
     font-family: var(--font);
     text-transform: capitalize;
     font-weight: bolder;
     padding-bottom: 20px;
     text-align: center;
-    /* padding-top: 100px; */
 }
 
 .home_hero_span {
@@ -123,19 +119,18 @@
 
 /* About. */
 .home_about {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    /*auto*/
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .home_about_container {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 90vw;
     height: 100vh;
     display: flex;
@@ -149,24 +144,21 @@
 }
 
 .home_about_title {
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     color: #685cfa;
     font-size: 30px;
-    /*25px*/
     letter-spacing: 3px;
     font-family: var(--font);
     text-transform: uppercase;
     font-weight: bold;
     text-align: left;
-    /* padding-top: 100px; */
     margin-bottom: 30px;
 }
 
 .home_about_text {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 50%;
     padding-right: 20px;
-
     grid-column: 1;
     font-family: var(--font);
     font-size: 20px;
@@ -177,9 +169,8 @@
 }
 
 .home_about_img {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 40%;
-    /* height: auto; */
     align-items: stretch;
     border: 1px solid #685cfa;
     background-color: #B4A0FF;
@@ -195,7 +186,7 @@
 
 /* Importance Cards. */
 .home_importance {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     top: 0;
     left: 0;
     width: 100%;
@@ -206,7 +197,7 @@
 }
 
 .home_importance_container {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 90vw;
     height: 100vh;
     display: flex;
@@ -216,7 +207,7 @@
 }
 
 .home_importance_title {
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     color: #685cfa;
     font-size: 30px;
     letter-spacing: 3px;
@@ -228,7 +219,7 @@
 }
 
 .home_importance_text {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 95%;
     padding-right: 20px;
     font-family: var(--font);
@@ -245,8 +236,7 @@
 }
 
 .home_importance_cards_container {
-    border: 1px solid purple;
-    /* box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.3); */
+    /* border: 1px solid purple; */
     position: relative;
     left: 10px;
     width: 100%;
@@ -262,7 +252,7 @@
 
 /* Reason. */
 .home_reason {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     top: 0;
     left: 0;
     width: 100%;
@@ -273,7 +263,7 @@
 }
 
 .home_reason_container {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 90vw;
     height: 100vh;
     display: flex;
@@ -292,7 +282,7 @@
 
 /* How it works. */
 .home_how_it_works_banner {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     top: 0;
     left: 0;
     width: 100%;
@@ -303,7 +293,7 @@
 }
 
 .home_how_it_works_banner_container {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 90vw;
     height: 22vh;
     display: flex;
@@ -313,10 +303,9 @@
 }
 
 .home_how_it_works_banner_title {
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     color: #685cfa;
     font-size: 30px;
-    /*25px*/
     letter-spacing: 3px;
     font-family: var(--font);
     text-transform: uppercase;
@@ -326,7 +315,7 @@
 }
 
 .home_how_it_works_banner_text {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 100%;
     padding-right: 20px;
     font-family: var(--font);
@@ -338,23 +327,22 @@
 
 /* Para o membro. */
 .home_how_it_works_to {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     top: 0;
     left: 0;
-    width: 100%;
+    width: 90%;
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* background: rgba(104, 92, 250, 0.5);
+    background: rgba(104, 92, 250, 0.3);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(104, 92, 250, 0.5);
-    border-radius: 10px; */
+    border: 1px dotted rgba(104, 92, 250, 0.3);
+    border-radius: 10px;
 }
 
 .home_how_it_works_to_container {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 85vw;
     height: 10vh;
     display: flex;
@@ -364,7 +352,7 @@
 }
 
 .home_how_it_works_to_title {
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     font-size: 25px;
     letter-spacing: 3px;
     font-family: var(--font);
@@ -375,7 +363,7 @@
 }
 
 .home_how_it_works_to_text {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 100%;
     height: 34px;
     padding-right: 20px;
@@ -388,7 +376,7 @@
 
 /* Membro. */
 .home_how_it_works {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     top: 0;
     left: 0;
     width: 100%;
@@ -399,14 +387,14 @@
 }
 
 .home_how_it_works_container {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 90vw;
     height: 130vh;
 }
 
 /* Especialista. */
 .home_how_it_works_expert {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     top: 0;
     left: 0;
     width: 100%;
@@ -417,13 +405,13 @@
 }
 
 .home_how_it_works_container_expert {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 90vw;
     height: 136vh;
 }
 
 .home_how_it_works_time_line {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     position: relative;
     width: 95%;
     margin: 50px auto;
@@ -529,12 +517,13 @@
     padding: 20px 30px;
     border: 0.16px dotted var(--border-color);
     border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     /* cursor: pointer; */
-    transition: all 0.5s ease-in-out;
+    transition: all 0.6s ease-in;
 }
 
 .home_how_it_works_span {
-    border: 1px solid salmon;
+    /* border: 1px solid salmon; */
     color: #685cfa;
     font-size: 25px;
     white-space: nowrap;
@@ -596,7 +585,7 @@
 }
 
 .home_call_register_container {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 90vw;
     height: 40vh;
     display: flex;
@@ -610,7 +599,7 @@
 }
 
 .home_call_register_title {
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     color: #685cfa;
     font-size: 30px;
     letter-spacing: 3px;
@@ -618,12 +607,11 @@
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
-    /* margin-bottom: 60px; */
     margin: 45px;
 }
 
 .home_call_register_text {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 85vw;
     height: 30vh;
     font-size: 20px;
@@ -636,7 +624,7 @@
 
 /* Warning. */
 .home_warning {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding-top: 150px;
     width: 100%;
     height: 15vh;
@@ -646,7 +634,7 @@
 }
 
 .home_warning_container {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     background: rgba(104, 92, 250, 0.3);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(104, 92, 250, 0.1);
@@ -659,7 +647,7 @@
 }
 
 .home_warning_text {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 95%;
     font-family: var(--font);
     font-size: 20px;
@@ -682,9 +670,22 @@
     border-radius: 50%;
 }
 
+.home_warning_link {
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--footer-text-color);
+    transition: color 0.5s ease-in;
+}
+
+.home_warning_link:hover {
+    color: #fb1653;
+}
+
 /* Ranking: Title and introduction. */
 .home_expert_hanking_intro {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     top: 0;
     left: 0;
     width: 100%;
@@ -695,7 +696,7 @@
 }
 
 .home_expert_hanking_intro_container {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 90vw;
     height: 20vh;
     display: flex;
@@ -705,7 +706,7 @@
 }
 
 .home_expert_hanking_intro_text {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 95%;
     padding-right: 20px;
     font-family: var(--font);
@@ -715,7 +716,7 @@
 }
 
 .home_expert_hanking_intro_title {
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     color: #685cfa;
     font-size: 30px;
     letter-spacing: 3px;
@@ -728,7 +729,7 @@
 
 /* Ranking. */
 .home_expert_hanking {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     top: 0;
     left: 0;
     width: 100%;
@@ -739,7 +740,7 @@
 }
 
 .home_expert_hanking_container {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 90vw;
     height: 100vh;
     display: flex;
@@ -748,41 +749,40 @@
     gap: 20px;
 }
 
-/* Review. */
-.home_member_review {
-    border: 1px solid red;
+/* Review: Title and introduction. */
+.home_member_review_intro {
+    /* border: 1px solid red; */
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.home_member_review_container {
-    border: 1px solid blue;
+.home_member_review_intro_container {
+    /* border: 1px solid blue; */
     width: 90vw;
-    height: 100vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
 
-.home_member_review_text {
-    border: 1px solid green;
+.home_member_review_intro_text {
+    /* border: 1px solid green; */
     width: 95%;
     padding-right: 20px;
     font-family: var(--font);
-    font-size: 18px;
-    /* 18px */
+    font-size: 20px;
     text-align: left;
     justify-content: left;
 }
 
-.home_member_review_title {
-    border: 1px solid orange;
+.home_member_review_intro_title {
+    /* border: 1px solid orange; */
     color: #685cfa;
     font-size: 30px;
     letter-spacing: 3px;
@@ -793,8 +793,27 @@
     margin-bottom: 30px;
 }
 
+/* Review. */
+.home_member_review {
+    /* border: 1px solid red; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-
+.home_member_review_container {
+    /* border: 1px solid blue; */
+    width: 90vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
 
 /* Responsividades. */
 /* Estilos específicos para resolução de 320x568. */
@@ -931,8 +950,7 @@
         /* OK. */
         border: 1px solid red;
         width: 310px;
-        height: 1900px;
-        /* 1136px. */
+        height: 1800px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -945,8 +963,7 @@
         /* OK. */
         border: 1px solid blue;
         width: 310px;
-        height: 1900px;
-        /* 1136px. Voltar Aqui! */
+        height: 1400px;
         gap: 20px;
         font-size: 15px;
     }
@@ -1201,6 +1218,9 @@
         font-size: 40px;
     }
 
+    .home_warning_link {
+        font-size: 15px;
+    }
 
     /* Ranking: Title and introduction. */
     .home_expert_hanking_intro {
@@ -1242,7 +1262,7 @@
         width: 310px;
         height: auto;
         padding-top: 1110px;
-        padding-bottom: 1300px;
+        padding-bottom: 1090px;
     }
 
     .home_expert_hanking_container {
@@ -1252,38 +1272,53 @@
         height: 100vh;
     }
 
+    /* Review: Title and introduction. */
+    .home_member_review_intro {
+        /* OK. */
+        border: 1px solid red;
+        width: 310px;
+        height: 50vh;
+    }
+
+    .home_member_review_intro_container {
+        /* OK. */
+        border: 1px solid blue;
+        width: 310px;
+        height: 50vh;
+    }
+
+    .home_member_review_intro_text {
+        /* OK. */
+        border: 1px solid green;
+        width: 90%;
+        height: auto;
+        padding-right: none;
+        font-size: 15px;
+    }
+
+    .home_member_review_intro_title {
+        /* OK. */
+        border: 1px solid orange;
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
     /* Review. */
     .home_member_review {
         /* OK. */
-        border: 1px solid white;
+        border: 1px solid aqua;
         flex-direction: column;
         justify-content: space-between;
         width: 310px;
         height: auto;
         padding-top: 400px;
-        padding-bottom: 620px;
+        padding-bottom: 470px;
     }
 
     .home_member_review_container {
         /* OK. */
         border: 1px solid blue;
         width: 310px;
-        height: 100vh;
-    }
-
-    .home_member_review_text {
-        /* OK. */
-        border: 1px solid green;
-        width: 90%;
-        height: auto;
-        font-size: 15px;
-    }
-
-    .home_member_review_title {
-        /* OK. */
-        border: 1px solid orange;
-        font-size: 20px;
-        letter-spacing: 2px;
     }
 }
 
