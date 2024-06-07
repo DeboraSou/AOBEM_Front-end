@@ -4,8 +4,7 @@
     box-sizing: border-box;
 }
 
-.notFound_section {
-    /* border: 1px solid green; */
+/* .notFound_section {
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -13,7 +12,6 @@
     justify-content: center;
     width: 100%;
     height: 100vh;
-    /*80vh*/
 }
 
 .notFound_container {
@@ -22,10 +20,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* border: 1px solid red; */
     gap: 20px;
     padding: 0 30px 20px 30px;
-    /* background: rgba(255, 255, 255, 0.1); */
     background: rgba(255, 255, 255, 0.09);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -42,23 +38,14 @@
 .notFound_caption {
     font-family: 'Inter', sans-serif;
     font-size: 170px;
-    /*200px*/
     background-image: -webkit-linear-gradient(45deg, #047cfb, #09c4dd, #685cfa, #fb1653);
-    /* Para navegadores WebKit (Safari, Chrome). */
     background-image: -moz-linear-gradient(45deg, #047cfb, #09c4dd, #685cfa, #fb1653);
-    /* Para navegadores Gecko (Firefox). */
     background-image: -o-linear-gradient(45deg, #047cfb, #09c4dd, #685cfa, #fb1653);
-    /* Para navegadores Opera. */
     background-image: linear-gradient(45deg, #047cfb, #09c4dd, #685cfa, #fb1653);
-    /* Padrão. */
     -webkit-background-clip: text;
-    /* Para navegadores WebKit (Safari, Chrome). */
     -moz-background-clip: text;
-    /* Para navegadores Gecko (Firefox). */
     -o-background-clip: text;
-    /* Para navegadores Opera. */
     background-clip: text;
-    /* Padrão. */
     -webkit-text-fill-color: transparent;
     outline: none;
     background-size: 400% 100%;
@@ -67,7 +54,6 @@
 
 .notFound_caption {
     font-size: 40px;
-    /*50px*/
 }
 
 @keyframes gradient {
@@ -83,38 +69,7 @@
 .notFound_paragraph {
     font-family: 'Inter', sans-serif;
     font-size: 25px;
-    /*30px*/
 }
-
-/* .notFound_btn {
-    color: #F7F6FB;
-    background-color: #002782;
-    border: 2px solid #002782;
-    font-size: 0.9em;
-    font-weight: bold;
-    padding: 12px 55px;
-    margin: 30px 0 10px 0;
-    border-radius: 10px;
-    outline: none;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.5s ease-in border 0.5s ease-in;
-}
-
-.notFound_btn:hover {
-    background-color: #00919C;
-    border: 2px solid #00919C;
-}
-
-.notFound_link {
-    text-decoration: none;
-    font-family: 'Inter', sans-serif;
-    font-size: 1em;
-    font-weight: bold;
-    color: #F7F6FB;
-} */
-
 
 .notFound_btn {
     position: relative;
@@ -123,8 +78,6 @@
     background: transparent;
     font-size: 20px;
     border: none;
-    /* border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px; */
     outline: none;
     transition: all 1s;
     cursor: pointer;
@@ -136,8 +89,6 @@
     width: 10px;
     height: 10px;
     position: absolute;
-    /* border: 3px solid #fb1653; */
-    /* border-radius: 10px; */
     transition: all 1s ease-in;
 }
 
@@ -176,6 +127,25 @@
     color: var(--text-color);
     position: relative;
     z-index: 2;
+} */
+
+
+.expert_hero {
+    border: 1px solid red;
+    top: 0;
+    left: 0;
+    width: 99vw;
+    height: 200vh;
+}
+
+.expert_container {
+    border: 1px solid blue;
+    width: 90vw;
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Responsividades. */
@@ -184,7 +154,6 @@
     .notFound_section {
         border: 1px solid yellow;
         height: 100vh;
-        /*70vh*/
     }
 
     .notFound_container {
@@ -206,7 +175,6 @@
     .notFound_section {
         border: 1px solid rgb(221, 129, 9);
         height: 100vh;
-        /*70vh*/
     }
 
     .notFound_container {
