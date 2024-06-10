@@ -304,7 +304,7 @@ function Home() {
                 <section className={styles.home_warning}>
                     <article className={styles.home_warning_container}>
                         <p className={styles.home_warning_text}>
-                            <span><FiAlertTriangle className={styles.home_warning_icon} title='Atenção!' /></span>Este site não oferece tratamento ou aconselhamento imediato para pessoas em crise suicida. Em caso de crise, ligue para <strong>188</strong> (CVV) ou acesse o site <a className={styles.home_warning_link} href="https://cvv.org.br/" target='_blank' rel='noopener noreferrer'>www.cvv.org.br</a> Em caso de emergência, procure atendimento em um hospital mais próximo.
+                            <span><FiAlertTriangle className={styles.home_warning_icon} title='Atenção!' /></span>Este site não oferece tratamento ou aconselhamento imediato para pessoas em crise suicida. Em caso de crise, ligue para <a className={styles.home_warning_link} href="tel:188">188</a> (CVV) ou acesse o site <a className={styles.home_warning_link} href="https://cvv.org.br/" target='_blank' rel='noopener noreferrer'>www.cvv.org.br</a> Em caso de emergência, procure atendimento em um hospital mais próximo.
                         </p>
                     </article>
                 </section>

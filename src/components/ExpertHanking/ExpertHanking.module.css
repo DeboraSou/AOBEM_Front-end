@@ -13,7 +13,10 @@
   height: 145px;
   border-radius: 50%;
   margin-bottom: 10px;
-  border: 0.16px dotted var(--border-color);
+  /* border: 0.16px dotted var(--border-color); */
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+  margin-top: -100px;
 }
 
 .expert_hanking_info_container {
@@ -23,7 +26,7 @@
   align-items: center;
   margin: 20px;
   padding: 20px;
-  border: 0.16px dotted var(--border-color);
+  /* border: 0.16px dotted var(--border-color); */
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   width: 530px;
@@ -211,6 +214,7 @@
     flex-direction: column;
     width: 108%;
     max-width: 310px;
+    gap: 80px;
   }
 
   .expert_hanking_info_container {
@@ -231,10 +235,8 @@
   }
 
   .expert_hanking_span {
-
     width: 95%;
     font-size: 16px;
-    background-color: pink;
   }
 
   .expert_hanking_name {

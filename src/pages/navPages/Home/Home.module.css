@@ -73,7 +73,7 @@
     align-items: center;
 }
 
-.home_hero_img {
+/* .home_hero_img {
     opacity: 0.6;
     width: 700px;
     display: block;
@@ -82,16 +82,16 @@
 
 .home_hero_img:hover {
     opacity: 1;
-}
+} */
 
-/* .home_hero_img {
+.home_hero_img {
     position: absolute;
     opacity: 0.3;
     width: 1000px;
     display: block;
     z-index: -3;
     padding-bottom: 100px;
-} */
+}
 
 .home_hero_title {
     font-size: 6rem;
@@ -836,10 +836,22 @@
         height: 568px;
     }
 
-    .home_hero_img {
-        /* Ok. */
+    /* .home_hero_img {
         width: 250px;
         padding: 25px 0;
+    } */
+
+    .home_hero_img {
+        /* Voltar aqui! */
+        opacity: 0.6;
+        /* width: 700px; */
+        width: 250px;
+        display: block;
+        transition: opacity 0.9s ease-in;
+    }
+
+    .home_hero_img:hover {
+        opacity: 1;
     }
 
     .home_hero_title {
@@ -1261,7 +1273,8 @@
         justify-content: space-between;
         width: 310px;
         height: auto;
-        padding-top: 1110px;
+        /* padding-top: 1110px; */
+        padding-top: 1100px;
         padding-bottom: 1090px;
     }
 
@@ -1311,8 +1324,10 @@
         justify-content: space-between;
         width: 310px;
         height: auto;
-        padding-top: 400px;
-        padding-bottom: 470px;
+        /* padding-top: 400px;
+        padding-bottom: 470px; */
+        padding-top: 540px;
+        padding-bottom: 540px;
     }
 
     .home_member_review_container {
