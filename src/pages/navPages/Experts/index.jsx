@@ -4,11 +4,14 @@ import { useState } from 'react';
 import { FaStar } from "react-icons/fa"; <FaStar />
 import { FaStarHalfAlt } from "react-icons/fa"; <FaStarHalfAlt />
 import { FaRegStar } from "react-icons/fa"; <FaRegStar />
+import { MdFilterAlt } from "react-icons/md"; <MdFilterAlt />
+import { FaSearch } from "react-icons/fa"; <FaSearch />
 import { Link } from 'react-router-dom';
 
 function Experts() {
 
     const [searchTerm, setSearchTerm] = useState('');
+    const [showFilters, setShowFilters] = useState(false);
     const [specialtyFilter, setSpecialtyFilter] = useState('all');
     const [approachFilter, setApproachFilter] = useState('all');
     const [genderFilter, setGenderFilter] = useState('all');
@@ -99,58 +102,95 @@ function Experts() {
         <>
             <ScrollTop />
             <div>
+
+                {/* Hero. */}
                 <section className={styles.expert_hero}>
                     <div className={styles.expert_container}>
-                        <div className={styles.all_experts_container}>
-                            <header className={styles.header}>
-                                <h1>Todos os Especialistas</h1>
-                                <p>Encontre o especialista certo para você entre todos os profissionais cadastrados.</p>
-                            </header>
+                        Hero
+                    </div>
+                </section>
 
-                            <div className={styles.filters}>
-                                <input
-                                    type="text"
-                                    placeholder="Buscar por nome..."
-                                    value={searchTerm}
-                                    onChange={(e) => setSearchTerm(e.target.value)}
-                                />
-                                <select value={specialtyFilter} onChange={(e) => setSpecialtyFilter(e.target.value)}>
-                                    <option value="all">Todas as Especialidades</option>
-                                    <option value="Psicóloga Clínica">Psicóloga Clínica</option>
-                                    <option value="Psicólogo do Esporte">Psicólogo do Esporte</option>
-                                    <option value="Psicóloga Jurídica">Psicóloga Jurídica</option>
-                                </select>
-                                <select value={approachFilter} onChange={(e) => setApproachFilter(e.target.value)}>
-                                    <option value="all">Todas as Abordagens</option>
-                                    <option value="Cognitivo-Comportamental">Cognitivo-Comportamental</option>
-                                    <option value="Humanista">Humanista</option>
-                                    <option value="Psicanálise">Psicanálise</option>
-                                </select>
-                                <select value={genderFilter} onChange={(e) => setGenderFilter(e.target.value)}>
-                                    <option value="all">Todos os Gêneros</option>
-                                    <option value="male">Masculino</option>
-                                    <option value="female">Feminino</option>
-                                </select>
-                                <select value={locationFilter} onChange={(e) => setLocationFilter(e.target.value)}>
-                                    <option value="all">Todas as Localizações</option>
-                                    <option value="SP">São Paulo</option>
-                                    <option value="RJ">Rio de Janeiro</option>
-                                    <option value="MG">Minas Gerais</option>
-                                </select>
-                                <select value={serviceTypeFilter} onChange={(e) => setServiceTypeFilter(e.target.value)}>
-                                    <option value="all">Todos os Tipos de Atendimento</option>
-                                    <option value="online">Atende Online</option>
-                                    <option value="presencial">Atende Presencial</option>
-                                </select>
-                                <label>
+                {/* Expert: Title and introduction. */}
+                <section className={styles.expert_intro}>
+                    <div className={styles.expert_intro_container}>
+                        <h2>Todos os Especialistas</h2>
+                        <p>Encontre o especialista certo para você entre todos os profissionais cadastrados.</p>
+                    </div>
+                </section>
+
+                {/* Search. */}
+                <div className={styles.expert_search}>
+                    <div className={styles.expert_search_container}>
+                        <div className={styles.expert_search_text}>
+                            <div className={styles.expert_search_bar_container}>
+                                <div className={styles.expert_search_glass_container}>
                                     <input
-                                        type="checkbox"
-                                        checked={accessibilityFilter}
-                                        onChange={() => setAccessibilityFilter(!accessibilityFilter)}
+                                        type="text"
+                                        placeholder="Buscar por nome..."
+                                        value={searchTerm}
+                                        onChange={(e) => setSearchTerm(e.target.value)}
+                                        className={styles.expert_search_bar}
                                     />
-                                    Atende em Libras
-                                </label>
+                                    <FaSearch className={styles.expert_search_glass_icon} />
+                                </div>
+                                <button onClick={() => setShowFilters(!showFilters)} className={styles.expert_search_filters_button}><MdFilterAlt className={styles.expert_search_icon} /></button>
+                                {showFilters && (
+                                    <div className={styles.expert_search_filter}>
+                                        <div className={styles.expert_search_filters}>
+                                            <select value={specialtyFilter} onChange={(e) => setSpecialtyFilter(e.target.value)} className={styles.expert_search_select}>
+                                                {/* Especialidade. */}
+                                                <option value="all">Todas as Especialidades</option>
+                                                <option value="Psicóloga Clínica">Psicóloga Clínica</option>
+                                                <option value="Psicólogo do Esporte">Psicólogo do Esporte</option>
+                                                <option value="Psicóloga Jurídica">Psicóloga Jurídica</option>
+                                            </select>
+                                            <select value={approachFilter} onChange={(e) => setApproachFilter(e.target.value)} className={styles.expert_search_select}>
+                                                {/* Abordagem. */}
+                                                <option value="all">Todas as Abordagens</option>
+                                                <option value="Cognitivo-Comportamental">Cognitivo-Comportamental</option>
+                                                <option value="Humanista">Humanista</option>
+                                                <option value="Psicanálise">Psicanálise</option>
+                                            </select>
+                                            <select value={genderFilter} onChange={(e) => setGenderFilter(e.target.value)} className={styles.expert_search_select}>
+                                                {/* Gênero. */}
+                                                <option value="all">Todos os Gêneros</option>
+                                                <option value="male">Masculino</option>
+                                                <option value="female">Feminino</option>
+                                            </select>
+                                            <select value={locationFilter} onChange={(e) => setLocationFilter(e.target.value)} className={styles.expert_search_select}>
+                                                {/* Localização. */}
+                                                <option value="all">Todas as Localizações</option>
+                                                <option value="SP">São Paulo</option>
+                                                <option value="RJ">Rio de Janeiro</option>
+                                                <option value="MG">Minas Gerais</option>
+                                            </select>
+                                            <select value={serviceTypeFilter} onChange={(e) => setServiceTypeFilter(e.target.value)} className={styles.expert_search_select}>
+                                                {/* Atendimento. */}
+                                                <option value="all">Todos os Tipos de Atendimento</option>
+                                                <option value="online">Atende Online</option>
+                                                <option value="presencial">Atende Presencial</option>
+                                            </select>
+                                            <label>
+                                                <input
+                                                    type="checkbox"
+                                                    checked={accessibilityFilter}
+                                                    onChange={() => setAccessibilityFilter(!accessibilityFilter)}
+                                                    className={styles.expert_search_checkbox}
+                                                /> Atende em Libras
+                                            </label>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* All Cards. */}
+                <section className={styles.expert_all_cards}>
+                    <div className={styles.expert_all_cards_container}>
+
+                        <div className={styles.all_experts_container}>
 
                             <div className={styles.experts_list}>
                                 {filteredExperts.map(expert => (
