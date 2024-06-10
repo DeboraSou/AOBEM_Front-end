@@ -10,7 +10,7 @@ function Footer() {
     return (
         <footer className={styles.footer}>
             <section className={styles.footer_top}>
-                <Link className={styles.footer_logo} to="/" aria-label="Página Inicial" role="button"><img src='/logomarca.png' alt='Logo AOBEM' title='Logomarca AOBEM' style={{ width: '90px' }} /></Link>
+                <Link className={styles.footer_logo} to="/" aria-label="Página Inicial" role="button"><img src='/logomarca.png' alt='Logomarca AOBEM' title='Logomarca AOBEM' style={{ width: '90px' }} /></Link>
 
                 <div className={styles.footer_links}>
 
