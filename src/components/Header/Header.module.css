@@ -118,11 +118,6 @@
     flex-direction: row;
 }
 
-
-/*
-Light: Azul=#6EA8FF, Verde=#8CE8FF, Roxo=#B4A0FF, Rosa=#FF8CC6
-Dark: Azul=#047cfb, Verde=#09c4dd, Roxo=#685cfa, Rosa=#fb1653
-*/
 .toggleIcon .open {
     color: var(--icon-color);
     box-shadow: var(--icon-shadow);
@@ -248,13 +243,15 @@ Dark: Azul=#047cfb, Verde=#09c4dd, Roxo=#685cfa, Rosa=#fb1653
 @media screen and (max-width: 320px) and (min-height: 568px) {
     .header {
         width: 100%;
+        /* width: 320px; */
         border: 1px solid #9080ef;
         justify-content: space-evenly;
     }
 
     /* Mudar o logo. */
     .headerLink {
-        width: 140px;
+        width: 75px;
+        content: url('/logomarca.png');
     }
 
     .containerToggle {
