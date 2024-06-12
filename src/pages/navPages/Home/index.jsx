@@ -106,7 +106,7 @@ function Home() {
                 </section>
 
                 {/* About. */}
-                <section id="section2_quem_somos" className={styles.home_about}>
+                <section id="section2_saiba_quem_somos" className={styles.home_about}>
                     <article className={styles.home_about_container}>
                         <div className={styles.home_about_text}>
                             <h3 className={styles.home_about_title}>Seu Refúgio para o Bem-Estar Mental</h3>
