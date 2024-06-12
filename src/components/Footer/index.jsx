@@ -1,7 +1,7 @@
 import styles from './Footer.module.css'
 import { Link, NavLink } from 'react-router-dom';
 import { FaInstagram } from "react-icons/fa6"; <FaInstagram />
-import { MdAlternateEmail, MdPadding } from "react-icons/md"; <MdAlternateEmail />
+import { MdAlternateEmail } from "react-icons/md"; <MdAlternateEmail />
 
 function Footer() {
 
@@ -17,10 +17,12 @@ function Footer() {
                     {/* Seções da página início. */}
                     <article className={styles.footer_links_column}>
                         <h2 className={styles.footer_title}>Links Úteis</h2>
-                        <a className={styles.footer_link_a} href="/#section2_quem_somos" target="_self">Saiba quem somos</a>
+                        <a className={styles.footer_link_a} href="/#section2_saiba_quem_somos" target="_self">Saiba quem somos</a>
                         <a className={styles.footer_link_a} href="/#section4_por_que_fazer_terapia" target="_self">Por que fazer terapia?</a>
                         <a className={styles.footer_link_a} href="/#section5_como_funciona" target="_self">Como funciona?</a>
                         <a className={styles.footer_link_a} href="#section2_perguntas_frequentes" target="_self">Perguntas Frequentes</a>
+                        <Link to="/" className={styles.footer_link_a} aria-label="Mapa do Site">Mapa do Site</Link>
+                        <Link to="/" className={styles.footer_link_a} aria-label="Créditos">Créditos</Link>
                     </article>
 
                     {/* Links externos. */}
