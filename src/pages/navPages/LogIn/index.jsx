@@ -393,7 +393,7 @@ function LogIn() {
 
                                 <p className={styles.sign_patient_expert_paragraph}>
                                     Ainda não tem uma conta?{' '}
-                                    <Link to="/cadastrar?type=especialista" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_account}`}> Cadastrar conta</Link>
+                                    <Link to="/cadastrar?type=especialista" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_account}`} aria-label="Ainda não tem uma conta?"> Cadastrar conta</Link>
                                 </p>
 
                             </form>
@@ -498,7 +498,7 @@ function LogIn() {
 
                                 <p className={styles.sign_patient_expert_paragraph}>
                                     Ainda não tem uma conta?{' '}
-                                    <Link to="/cadastrar?type=membro" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_account}`}> Cadastrar conta</Link>
+                                    <Link to="/cadastrar?type=membro" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_account}`} aria-label="Ainda não tem uma conta?"> Cadastrar conta</Link>
                                 </p>
 
                             </form>
