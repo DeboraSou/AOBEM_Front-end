@@ -22,54 +22,69 @@ function Experts() {
     const experts = [
         {
             id: 1,
+            image: 'src/assets/ana_p.png',
             name: 'Ana Albani',
             specialty: 'Psicóloga Clínica',
+            rcp: '000000 / 06',
+            rating: 4.8,
             approach: 'Cognitivo-Comportamental',
+            bio: 'Sou uma psicóloga clínica com mais de 10 anos de experiência no tratamento de transtornos de ansiedade e depressão.',
+            services: [
+                'Terapia Cognitivo-Comportamental (TCC)',
+                'Depressão',
+                'Transtornos de Ansiedade'
+            ],
             gender: 'feminino',
             state: 'SP',
             city: 'São Paulo',
             online: true,
             accessibility: true,
-            rating: 4.8,
             experience: 'Mais de 10 anos de experiência como psicóloga clínica.',
-            userReviews: 120,
-            patientFeedback: 'A Dra. Ana é incrível! Ela me ajudou a superar minha ansiedade de uma forma que eu nunca pensei ser possível.',
-            bio: 'Sou uma psicóloga clínica com mais de 10 anos de experiência no tratamento de transtornos de ansiedade e depressão.',
-            image: 'src/assets/ana_p.png'
+            userReviews: 120
         },
         {
             id: 2,
+            image: 'src/assets/takeshi_p.png',
             name: 'Takeshi Taddini',
             specialty: 'Psicólogo do Esporte',
+            rcp: '000000 / 18',
+            rating: 4.7,
             approach: 'Desempenho de Atletas',
+            bio: 'Trabalho com atletas de alto rendimento, auxiliando-os a alcançar seu potencial máximo.',
+            services: [
+                'Desempenho de Atletas',
+                'Gestão de Pressão Competitiva',
+                'Bem-Estar Mental no Esporte'
+            ],
             gender: 'masculino',
-            state: 'RJ',
-            city: 'Rio de Janeiro',
+            state: ' MT',
+            city: 'Cuiabá',
             online: false,
             accessibility: false,
-            rating: 4.7,
             experience: 'Experiência profissional como psicólogo do esporte.',
-            userReviews: 95,
-            patientFeedback: 'O tratamento com o Dr. Taddini melhorou significativamente meu desempenho no esporte. Ele é incrível!',
-            bio: 'Trabalho com atletas de alto rendimento, auxiliando-os a alcançar seu potencial máximo.',
-            image: 'src/assets/takeshi_p.png'
+            userReviews: 95
         },
         {
             id: 3,
+            image: 'src/assets/veronika_p.png',
             name: 'Veronika Vogel',
             specialty: 'Psicóloga Jurídica',
+            rcp: '000000 / 12',
+            rating: 4.5,
             approach: 'Psicanálise',
-            gender: 'feminina',
-            state: 'PR',
-            city: 'Curitiba',
+            bio: 'Atuo como psicóloga jurídica há mais de 10 anos, oferecendo suporte a clientes envolvidos em questões legais.',
+            services: [
+                'Avaliação Psicológica em Processos Legais',
+                'Mediação de Conflitos',
+                'Apoio a Vítimas de Crimes'
+            ],
+            gender: 'feminino',
+            state: 'SC',
+            city: 'Florianópolis',
             online: true,
             accessibility: true,
-            rating: 4.5,
             experience: 'Mais de 10 anos de experiência como psicóloga jurídica.',
-            userReviews: 140,
-            patientFeedback: 'A Dra. Vogel é uma profissional incrível! Seu apoio em processos legais faz toda a diferença.',
-            bio: 'Atuo como psicóloga jurídica há mais de 10 anos, oferecendo suporte a clientes envolvidos em questões legais.',
-            image: 'src/assets/veronika_p.png'
+            userReviews: 140
         }
     ];
 
@@ -199,13 +214,11 @@ function Experts() {
                                         <div className={styles.expert_info}>
                                             <h3>{expert.name}</h3>
                                             <p><strong>Especialidade:</strong> {expert.specialty}</p>
-                                            <p><strong>Abordagem:</strong> {expert.approach}</p>
-                                            <p><strong>Experiência:</strong> {expert.experience}</p>
-                                            <p><strong>Avaliações dos Usuários:</strong> {expert.userReviews}</p>
+                                            <p><strong>CRP:</strong> {expert.rcp}</p>
                                             <p><strong>Avaliação:</strong> {renderStars(expert.rating)} {expert.rating.toFixed(1)}</p>
-                                            <p><strong>Localização:</strong> {expert.city}, {expert.state}</p>
-                                            <p><strong>Feedback dos Pacientes:</strong> {expert.patientFeedback}</p>
+                                            <p><strong>Abordagem:</strong> {expert.approach}</p>
                                             <p>{expert.bio}</p>
+                                            <p><strong>Serviços:</strong> {expert.services}</p>
                                             <div className={styles.buttons}>
                                                 <Link to={`/especialista/${expert.id}`} className={styles.primary_button}>Ver Perfil</Link>
                                                 <Link to="/cadastrar" className={styles.secondary_button}>Agendar Consulta</Link>
