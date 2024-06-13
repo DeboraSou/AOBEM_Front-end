@@ -1,11 +1,11 @@
 .expert_hanking_cards_container {
   /* border: 1px solid red; */
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 1700px;
-  position: relative;
 }
 
 .expert_hanking_image {
@@ -13,9 +13,7 @@
   height: 145px;
   border-radius: 50%;
   margin-bottom: 10px;
-  /* border: 0.16px dotted var(--border-color); */
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-
   margin-top: -100px;
 }
 
@@ -26,7 +24,6 @@
   align-items: center;
   margin: 20px;
   padding: 20px;
-  /* border: 0.16px dotted var(--border-color); */
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   width: 530px;
@@ -45,10 +42,12 @@
 
 .expert_hanking_right {
   order: 3;
+  transform: scale(0.9);
 }
 
 .expert_hanking_left {
   order: 1;
+  transform: scale(0.9);
 }
 
 .expert_hanking_info,
@@ -57,43 +56,68 @@
 }
 
 .expert_hanking_info,
+.expert_hanking_spec_rcp {
+  margin: 10px 0;
+}
+
+.expert_hanking_info,
 .expert_hanking_paragraph {
   margin: 13px 0;
 }
 
-.expert_hanking_info,
+.expert_hanking_approach {
+  font-weight: 500;
+}
+
 .expert_hanking_ul {
-  list-style: none;
-  padding: 0;
-  text-align: left;
   width: 100%;
+  list-style: none;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 25px 0 0 0;
 }
 
-.expert_hanking_info,
-.expert_hanking_ul,
 .expert_hanking_li {
-  margin: 5px 0;
-}
-
-.expert_hanking_span {
-  color: #685cfa;
-  width: 95%;
-  font-family: var(--font);
-  font-size: 18px;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-align: left;
-  justify-content: left;
+  background: rgba(104, 92, 250, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(104, 92, 250, 0.1);
+  border-radius: 10px;
+  padding: 6px 10px;
+  text-align: center;
 }
 
 .expert_hanking_name {
   /* border: 1px solid green; */
-  width: 95%;
   font-family: var(--font);
   font-size: 25px;
   text-align: center;
   text-transform: uppercase;
   padding: 5px 0;
+}
+
+.expert_hanking_spec_rcp {
+  /* border: 1px solid green; */
+  margin: 10px 0 30px 0;
+  font-family: var(--font);
+  text-align: center;
+  text-transform: uppercase;
+  padding: 2px 0;
+}
+
+.expert_hanking_spec {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 3px 0;
+}
+
+.expert_hanking_rcp {
+  font-size: 17px;
+  font-weight: 600;
+  color: #685cfa;
 }
 
 .expert_hanking_button_container {
