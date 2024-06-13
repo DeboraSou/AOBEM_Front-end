@@ -964,7 +964,7 @@ function Register() {
 
                                 <p className={styles.signUp_patient_expert_paragraph}>
                                     Já possui uma conta?{' '}
-                                    <Link to="/entrar?type=especialista" className={`${styles.signUp_patient_expert_a} ${styles.signUp_patient_expert_account}`}> Entrar na conta</Link>
+                                    <Link to="/entrar?type=especialista" className={`${styles.signUp_patient_expert_a} ${styles.signUp_patient_expert_account}`} aria-label="Já possui uma conta?"> Entrar na conta</Link>
                                 </p>
 
                             </form>
@@ -1187,7 +1187,7 @@ function Register() {
 
                                 <p className={styles.signUp_patient_expert_paragraph}>
                                     Já possui uma conta?{' '}
-                                    <Link to="/entrar?type=membro" className={`${styles.signUp_patient_expert_a} ${styles.signUp_patient_expert_account}`}> Entrar na conta</Link>
+                                    <Link to="/entrar?type=membro" className={`${styles.signUp_patient_expert_a} ${styles.signUp_patient_expert_account}`} aria-label="Já possui uma conta?"> Entrar na conta</Link>
                                 </p>
 
                             </form>
