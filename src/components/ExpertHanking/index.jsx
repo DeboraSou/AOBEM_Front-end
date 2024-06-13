@@ -1,7 +1,6 @@
 import styles from './ExpertHanking.module.css'
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-
 import { FaStar } from "react-icons/fa"; <FaStar />
 import { FaStarHalfAlt } from "react-icons/fa"; <FaStarHalfAlt />
 import { FaRegStar } from "react-icons/fa"; <FaRegStar />
@@ -14,49 +13,45 @@ function ExpertHanking() {
       id: 1,
       image: 'src/assets/ana_p.png',
       name: 'Ana Albani',
-      rating: 4.8,
       specialty: 'Psicóloga Clínica',
+      rcp: '000000 / 06',
+      rating: 4.8,
+      approach: 'Cognitivo-Comportamental',
       bio: 'Sou uma psicóloga clínica com mais de 10 anos de experiência no tratamento de transtornos de ansiedade e depressão.',
       services: [
-        'Consultas Psicológicas',
         'Terapia Cognitivo-Comportamental (TCC)',
-        'Tratamento da Depressão',
-        'Tratamento de Transtornos de Ansiedade',
-        'Sessões de Aconselhamento para Estresse',
-        'Terapia de Habilidades Sociais',
-        'Programas de Bem-Estar Emocional'
+        'Depressão',
+        'Transtornos de Ansiedade'
       ]
     },
     {
       id: 2,
       image: 'src/assets/takeshi_p.png',
       name: 'Takeshi Taddini',
-      rating: 4.7,
       specialty: 'Psicólogo do Esporte',
+      rcp: '000000 / 18',
+      rating: 4.7,
+      approach: 'Desempenho de Atletas',
       bio: 'Trabalho com atletas de alto rendimento, auxiliando-os a alcançar seu potencial máximo.',
       services: [
         'Desempenho de Atletas',
         'Gestão de Pressão Competitiva',
-        'Bem-Estar Mental no Esporte',
-        'Treinamento Mental para Competição',
-        'Recuperação Psicológica de Lesões',
-        'Construção de Confiança e Motivação'
+        'Bem-Estar Mental no Esporte'
       ]
     },
     {
       id: 3,
       image: 'src/assets/veronika_p.png',
       name: 'Veronika Vogel',
-      rating: 4.5,
       specialty: 'Psicóloga Jurídica',
+      rcp: '000000 / 12',
+      rating: 4.5,
+      approach: 'Psicanálise',
       bio: 'Atuo como psicóloga jurídica há mais de 10 anos, oferecendo suporte a clientes envolvidos em questões legais.',
       services: [
         'Avaliação Psicológica em Processos Legais',
         'Mediação de Conflitos',
-        'Apoio a Vítimas de Crimes',
-        'Consultoria para Advogados e Tribunais',
-        'Aconselhamento para Processos Legais',
-        'Intervenção em Crises'
+        'Apoio a Vítimas de Crimes'
       ]
     }
   ];
@@ -96,16 +91,19 @@ function ExpertHanking() {
               <img src={expert.image} alt={expert.name} className={styles.expert_hanking_image} />
               <div className={styles.expert_hanking_info}>
                 <h3 className={styles.expert_hanking_name}> {expert.name}</h3>
-                <p className={styles.expert_hanking_paragraph}>
+                <div className={styles.expert_hanking_spec_rcp}>
+                  <p title='Especialidade' className={styles.expert_hanking_spec}> {expert.specialty}</p>
+                  <p title='Registro Profissional no Conselho Regional de Psicologia (CRP)' className={styles.expert_hanking_rcp}> {expert.rcp}</p>
+                </div>
+                <p title='Avaliação' className={styles.expert_hanking_paragraph}>
                   <span>
                     {renderStars(expert.rating)}
                     <span>{expert.rating.toFixed(1)}</span>
                   </span>
                 </p>
-                <p className={styles.expert_hanking_paragraph}><span className={styles.expert_hanking_span}>Especialidade:</span> {expert.specialty}</p>
-                <p className={styles.expert_hanking_paragraph}><span className={styles.expert_hanking_span}>Biografia:</span> {expert.bio}</p>
-                <p className={styles.expert_hanking_paragraph}><span className={styles.expert_hanking_span}>Serviços:</span></p>
-                <ul className={styles.expert_hanking_ul}>
+                <p title='Abordagem' className={`${styles.expert_hanking_paragraph} ${styles.expert_hanking_approach}`}> {expert.approach}</p>
+                <p title='Breve Biografia' className={styles.expert_hanking_paragraph}> {expert.bio}</p>
+                <ul title='Serviços' className={styles.expert_hanking_ul}>
                   {expert.services.map((service, index) => (
                     <li className={styles.expert_hanking_li} key={index}>{service}</li>
                   ))}
