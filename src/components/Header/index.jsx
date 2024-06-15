@@ -170,7 +170,7 @@ function Header() {
                     {/* Música. */}
                     <div>
                         <audio id="audio" controls={false} loop>
-                            <source src="src/music/music1.mp3" type="audio/mp3" />
+                            <source src="src/music/music.wav" type="audio/mp3" />
                         </audio>
 
                         {/* Botão Música. */}
