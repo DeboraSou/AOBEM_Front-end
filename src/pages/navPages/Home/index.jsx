@@ -30,33 +30,6 @@ function Home() {
     //     return () => clearTimeout(transitionTimer);
     // }, []);
 
-    // const [loading, setLoading] = useState(true);
-    // const [showAobem, setShowAobem] = useState(false);
-
-    // useEffect(() => {
-    //     const firstVisit = localStorage.getItem('firstVisit');
-
-    //     if (!firstVisit) {
-    //         localStorage.setItem('firstVisit', 'true');
-    //         const fakeContentLoading = setTimeout(() => {
-    //             setLoading(false);
-    //         }, 6000);
-
-    //         return () => clearTimeout(fakeContentLoading);
-    //     } else {
-    //         setLoading(false);
-    //     }
-    // }, []);
-
-    // useEffect(() => {
-    //     if (loading) {
-    //         const transitionTimer = setTimeout(() => {
-    //             setShowAobem(true);
-    //         }, 6000);
-
-    //         return () => clearTimeout(transitionTimer);
-    //     }
-    // }, [loading]);
 
 
     const [loading, setLoading] = useState(false);
@@ -66,6 +39,7 @@ function Home() {
         const firstVisit = localStorage.getItem('firstVisit');
 
         if (!firstVisit) {
+            console.log("%cPrimeira visita detectada!", 'color: #3da564; background-color: #06100a');
             localStorage.setItem('firstVisit', 'true');
             setLoading(true);
             const fakeContentLoading = setTimeout(() => {
@@ -78,6 +52,7 @@ function Home() {
 
     useEffect(() => {
         if (loading) {
+            console.log("%cCarregamento ativo", 'color: #189bcc; background-color: #020f14');
             const transitionTimer = setTimeout(() => {
                 setShowAobem(true);
             }, 2000);
@@ -85,7 +60,6 @@ function Home() {
             return () => clearTimeout(transitionTimer);
         }
     }, [loading]);
-
 
     return (
         <>
