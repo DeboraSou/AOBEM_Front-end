@@ -116,6 +116,7 @@
     line-height: 50px;
     display: flex;
     flex-direction: row;
+    padding: 2px;
 }
 
 .toggleIcon .open {
@@ -183,6 +184,7 @@
 .pauseIcon {
     color: var(--icon-color);
     transition: all 0.5s ease-in;
+    padding: 2px;
 }
 
 .pauseIcon:hover {
@@ -194,6 +196,7 @@
 .playIcon {
     color: var(--icon-color);
     transition: all 0.5s ease-in;
+    padding: 2px;
 }
 
 .playIcon:hover {
@@ -220,6 +223,7 @@
     color: var(--icon-color);
     box-shadow: var(--icon-shadow);
     transition: all 0.5s ease-in;
+    padding: 2px;
 }
 
 .lightIcon:hover {
@@ -231,6 +235,7 @@
     color: var(--icon-color);
     box-shadow: var(--icon-shadow);
     transition: all 0.5s ease-in;
+    padding: 2px;
 }
 
 .darkIcon:hover {
