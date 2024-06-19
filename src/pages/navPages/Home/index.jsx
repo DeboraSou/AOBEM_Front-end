@@ -30,8 +30,6 @@ function Home() {
     //     return () => clearTimeout(transitionTimer);
     // }, []);
 
-
-
     const [loading, setLoading] = useState(false);
     const [showAobem, setShowAobem] = useState(false);
 
@@ -52,7 +50,7 @@ function Home() {
 
     useEffect(() => {
         if (loading) {
-            console.log("%cCarregamento ativo", 'color: #189bcc; background-color: #020f14');
+            console.log("%cCarregamento ativo!", 'color: #189bcc; background-color: #020f14');
             const transitionTimer = setTimeout(() => {
                 setShowAobem(true);
             }, 2000);
