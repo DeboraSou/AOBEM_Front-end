@@ -22,6 +22,8 @@ import Thanks from "./pages/webPages/Thanks";
 import ForgotPassword from './pages/webPages/ForgotPassword';
 import ResetPassword from './pages/webPages/ResetPassword';
 
+import FullProfile from './pages/webPages/FullProfile';
+import HangOn from './pages/webPages/HangOn';
 import Unauthorized from './pages/webPages/Unauthorized';
 import ServiceTerms from "./pages/webPages/serviceTerms";
 import PrivacyPolicy from "./pages/webPages/privacyPolicy";
@@ -73,6 +75,8 @@ function App() {
           {/* <Route path="/redefinir-a-senha-membro/:id/:token" element={<ResetPassword />}></Route> */}
           <Route path="/redefinir-a-senha-membro" element={<ResetPassword />}></Route>
 
+          <Route path="/perfil-completo/:id" element={<FullProfile />}></Route>
+          <Route path="/aguarde" element={<HangOn />}></Route>
           <Route path="/nao-autorizado" element={<Unauthorized />}></Route>
           <Route path="/termos-de-servico" element={<ServiceTerms />}></Route>
           <Route path="/politica-de-privacidade" element={<PrivacyPolicy />}></Route>
