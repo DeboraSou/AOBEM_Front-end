@@ -1,5 +1,5 @@
 import styles from './LogIn.module.css'
-import { FaGooglePlusG } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa"; <FaGoogle />
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -316,7 +316,7 @@ function LogIn() {
                                 </legend>
 
                                 <div className={styles.sign_patient_expert_social_container}>
-                                    {/* <a href="#" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_social}`}><FaGooglePlusG /></a>
+                                    {/* <a href="#" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_social}`}><FaGoogle /></a>
                                     <a href="#" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_social}`}><FaFacebookF /></a>
                                     <a href="#" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_social}`}><FaInstagram /></a>
                                     <a href="#" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_social}`}><FaXTwitter /></a> */}
@@ -409,7 +409,7 @@ function LogIn() {
                                 </legend>
 
                                 <div className={styles.sign_patient_expert_social_container}>
-                                    <a href="#" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_social}`}><FaGooglePlusG /></a>
+                                    <a href="#" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_social}`}><FaGoogle /></a>
                                     <a href="#" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_social}`}><FaFacebookF /></a>
                                     <a href="#" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_social}`}><FaInstagram /></a>
                                     <a href="#" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_social}`}><FaXTwitter /></a>
