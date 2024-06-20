@@ -23,6 +23,8 @@ import ForgotPassword from './pages/webPages/ForgotPassword';
 import ResetPassword from './pages/webPages/ResetPassword';
 
 import FullProfile from './pages/webPages/FullProfile';
+import Map from "./pages/webPages/Map";
+import Credits from "./pages/webPages/Credits";
 import HangOn from './pages/webPages/HangOn';
 import Unauthorized from './pages/webPages/Unauthorized';
 import ServiceTerms from "./pages/webPages/serviceTerms";
@@ -76,6 +78,8 @@ function App() {
           <Route path="/redefinir-a-senha-membro" element={<ResetPassword />}></Route>
 
           <Route path="/perfil-completo/:id" element={<FullProfile />}></Route>
+          <Route path="/mapa" element={<Map />}></Route>
+          <Route path="/creditos" element={<Credits />}></Route>
           <Route path="/aguarde" element={<HangOn />}></Route>
           <Route path="/nao-autorizado" element={<Unauthorized />}></Route>
           <Route path="/termos-de-servico" element={<ServiceTerms />}></Route>
