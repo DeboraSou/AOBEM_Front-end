@@ -218,16 +218,20 @@ function Experts() {
 
                 {/* Hero. */}
                 <section className={styles.expert_hero}>
-                    <div className={styles.expert_container}>
-                        Hero
-                    </div>
+                    <article className={styles.expert_container}>
+                        <img src="src/assets/experts_hero.png" alt="Encontrar o especialista" title='Encontrar o especialista' className={styles.home_hero_img} />
+                        <h2 className={styles.home_hero_title}>Encontre o Especialista Certo para Você</h2>
+                        <h3 className={styles.home_hero_caption}>Conectamos você aos melhores profissionais de diversas especialidades.</h3>
+                    </article>
                 </section>
 
-                {/* Expert: Title and introduction. */}
+                {/* Experts: Animated introduction. */}
                 <section className={styles.expert_intro}>
                     <div className={styles.expert_intro_container}>
-                        <h2>Todos os Especialistas</h2>
-                        <p>Encontre o especialista certo para você entre todos os profissionais cadastrados.</p>
+                        <div className={styles.expert_intro_caption}>
+                            <h3 className={styles.expert_animated_intro}>Saúde Mental é <span className={styles.expert_animated_intro_span}></span>
+                            </h3>
+                        </div>
                     </div>
                 </section>
 
