@@ -23,7 +23,7 @@ import ForgotPassword from './pages/webPages/ForgotPassword';
 import ResetPassword from './pages/webPages/ResetPassword';
 
 import FullProfile from './pages/webPages/FullProfile';
-import Map from "./pages/webPages/Map";
+import Map from './pages/webPages/Map';
 import Credits from "./pages/webPages/Credits";
 import HangOn from './pages/webPages/HangOn';
 import Unauthorized from './pages/webPages/Unauthorized';
