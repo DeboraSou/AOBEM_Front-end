@@ -21,8 +21,8 @@ function Footer() {
                         <a className={styles.footer_link_a} href="/#section4_por_que_fazer_terapia" target="_self">Por que fazer terapia?</a>
                         <a className={styles.footer_link_a} href="/#section5_como_funciona" target="_self">Como funciona?</a>
                         <a className={styles.footer_link_a} href="#section2_perguntas_frequentes" target="_self">Perguntas Frequentes</a>
-                        <Link to="/" className={styles.footer_link_a} aria-label="Mapa do Site">Mapa do Site</Link>
-                        <Link to="/" className={styles.footer_link_a} aria-label="Créditos">Créditos</Link>
+                        <Link to="/mapa" className={styles.footer_link_a} aria-label="Mapa do Site">Mapa do Site</Link>
+                        <Link to="/creditos" className={styles.footer_link_a} aria-label="Créditos">Créditos</Link>
                     </article>
 
                     {/* Links externos. */}
