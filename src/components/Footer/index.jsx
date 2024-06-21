@@ -20,8 +20,8 @@ function Footer() {
                         <a className={styles.footer_link_a} href="/#section2_saiba_quem_somos" target="_self">Saiba quem somos</a>
                         <a className={styles.footer_link_a} href="/#section4_por_que_fazer_terapia" target="_self">Por que fazer terapia?</a>
                         <a className={styles.footer_link_a} href="/#section5_como_funciona" target="_self">Como funciona?</a>
-                        <a className={styles.footer_link_a} href="#section2_perguntas_frequentes" target="_self">Perguntas Frequentes</a>
-                        <Link to="/mapa" className={styles.footer_link_a} aria-label="Mapa do Site">Mapa do Site</Link>
+                        {/* <a className={styles.footer_link_a} href="#section2_perguntas_frequentes" target="_self">Perguntas Frequentes</a> */}
+                        {/* <Link to="/mapa" className={styles.footer_link_a} aria-label="Mapa do Site">Mapa do Site</Link> */}
                         <Link to="/creditos" className={styles.footer_link_a} aria-label="Créditos">Créditos</Link>
                     </article>
 
@@ -45,7 +45,7 @@ function Footer() {
                         <NavLink className={styles.footer_link_a} to="/contato" end style={({ isActive }) => { return isActive ? { color: "#fb1653" } : {}; }} aria-label="Entre em contato conosco"> Contato</NavLink>
                         <NavLink className={styles.footer_link_a} to="/entrar" end style={({ isActive }) => { return isActive ? { color: "#fb1653" } : {}; }} aria-label="Faça login na sua conta">Entrar</NavLink>
                         <NavLink className={styles.footer_link_a} to="/cadastrar" end style={({ isActive }) => { return isActive ? { color: "#fb1653" } : {}; }} aria-label="Crie uma conta">Cadastrar</NavLink>
-                        <NavLink className={styles.footer_link_a} to="/triagem" end style={({ isActive }) => { return isActive ? { color: "#fb1653" } : {}; }} aria-label="Realize a triagem">Triagem</NavLink>
+                        {/* <NavLink className={styles.footer_link_a} to="/triagem" end style={({ isActive }) => { return isActive ? { color: "#fb1653" } : {}; }} aria-label="Realize a triagem">Triagem</NavLink> */}
                     </article>
 
                     {/* Redes Sociais. */}
@@ -66,11 +66,11 @@ function Footer() {
                 <p className={styles.footer_copyright}>Copyright © {currentYear} AOBEM. Todos os direitos reservados.</p>
                 <div className={styles.footer_legal}>
                     <span className={styles.footer_span}>
-                        <NavLink className={styles.footer_links_legal} to="/termos-de-servico" end style={({ isActive }) => { return isActive ? { color: "#fb1653" } : {}; }} aria-label="Página Inicial">Termos de Serviço</NavLink>
+                        {/* <NavLink className={styles.footer_links_legal} to="/termos-de-servico" end style={({ isActive }) => { return isActive ? { color: "#fb1653" } : {}; }} aria-label="Página Inicial">Termos de Serviço</NavLink> */}
                     </span>
 
                     <span className={styles.footer_span}>
-                        <NavLink className={styles.footer_links_legal} to="/politica-de-privacidade" end style={({ isActive }) => { return isActive ? { color: "#fb1653" } : {}; }} aria-label="Página Inicial"> Política de Privacidade</NavLink>
+                        {/* <NavLink className={styles.footer_links_legal} to="/politica-de-privacidade" end style={({ isActive }) => { return isActive ? { color: "#fb1653" } : {}; }} aria-label="Página Inicial"> Política de Privacidade</NavLink> */}
                     </span>
                 </div>
             </section>
