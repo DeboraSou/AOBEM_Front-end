@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
     // Contexto de autenticação do login do membro.
     const login_patient = async (email, password, checkbox) => {
         try {
-            const response = await axios.post('http://localhost:5173/entrar?type=membro', {
+            const response = await axios.post('http://localhost:5432/userlogin', {
                 email,
                 password,
                 checkbox
@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }) => {
     // Contexto de autenticação do login do especialista.
     const login_expert = async (email, password) => {
         try {
-            const response = await axios.post('http://localhost:5173/entrar?type=especialista', {
+            const response = await axios.post('http://localhost:5432/psychlogin', {
                 email,
                 password
             });
@@ -62,7 +62,7 @@ export const AuthProvider = ({ children }) => {
     // Contexto de autenticação do cadastro do membro.
     const register_patient = async (name, email, password, checkbox) => {
         try {
-            const response = await axios.post('http://localhost:5173/cadastrar?type=membro', {
+            const response = await axios.post('http://localhost:5432/user', {
                 name,
                 email,
                 password,
@@ -85,7 +85,7 @@ export const AuthProvider = ({ children }) => {
     // Contexto de autenticação do cadastro do especialista.
     const register_expert = async (name, email, password, phone, registrationNumber, states, checkbox) => {
         try {
-            const response = await axios.post('http://localhost:5173/cadastrar?type=especialista', {
+            const response = await axios.post('http://localhost:5432/psych', {
                 name,
                 email,
                 password,
@@ -170,6 +170,137 @@ export const AuthProvider = ({ children }) => {
             return false;
         }
     };
+
+    // Contexto de criação de formulário.
+const createForm = async (formData) => {
+    try {
+      const response = await axios.post('http://localhost:5432/forms', formData);
+  
+      const formId = response.data.id;
+      navigate(`/forms/${formId}`);
+  
+      return null;
+    } catch (error) {
+      return error.response.data.message;
+    }
+  };
+  
+  // Contexto de listagem de formulários.
+  const getForms = async () => {
+    try {
+      const response = await axios.get('http://localhost:5432/forms');
+  
+      const formsData = response.data;
+      setForms(formsData);
+  
+      // Vai levar para a tela de listagem de formulários.
+      navigate('/forms');
+  
+      return null;
+    } catch (error) {
+      return error.response.data.message;
+    }
+  };
+  
+  // Contexto de detalhes de formulário.
+  const getFormById = async (id) => {
+    try {
+      const response = await axios.get(`http://localhost:5432/forms/${id}`);
+  
+      const formData = response.data;
+      setForm(formData);
+  
+      // Vai levar para a tela de detalhes do formulário.
+      navigate(`/forms/${id}`);
+  
+      return null;
+    } catch (error) {
+      return error.response.data.message;
+    }
+  };
+  
+  // Contexto de listagem de formulários por filtro.
+  const getFormsByFilter = async (filter, value) => {
+    try {
+      const response = await axios.get(`http://localhost:5432/forms/filter/${filter}/${value}`);
+  
+      const formsData = response.data;
+      setForms(formsData);
+  
+      // Vai levar para a tela de listagem de formulários por filtro.
+      navigate(`/forms/filter/${filter}/${value}`);
+  
+      return null;
+    } catch (error) {
+      return error.response.data.message;
+    }
+  };
+  
+  // Contexto de criação de avaliação.
+  const createEvaluation = async (evaluationData) => {
+    try {
+      const response = await axios.post('http://localhost:5432/evaluations', evaluationData);
+  
+      const evaluationId = response.data.id;
+      navigate(`/evaluations/${evaluationId}`);
+  
+      return null;
+    } catch (error) {
+      return error.response.data.message;
+    }
+  };
+  
+  // Contexto de listagem de avaliações.
+  const getEvaluations = async () => {
+    try {
+      const response = await axios.get('http://localhost:5432/evaluations');
+  
+      const evaluationsData = response.data;
+      setEvaluations(evaluationsData);
+  
+      // Vai levar para a tela de listagem de avaliações.
+      navigate('/evaluations');
+  
+      return null;
+    } catch (error) {
+      return error.response.data.message;
+    }
+  };
+  
+  // Contexto de detalhes de avaliação.
+  const getEvaluationById = async (id) => {
+    try {
+      const response = await axios.get(`http://localhost:5432/evaluations/${id}`);
+  
+      const evaluationData = response.data;
+      setEvaluation(evaluationData);
+  
+      // Vai levar para a tela de detalhes da avaliação.
+      navigate(`/evaluations/${id}`);
+  
+      return null;
+    } catch (error) {
+      return error.response.data.message;
+    }
+  };
+  
+  // Contexto de atualização de avaliação.
+  const updateEvaluation = async (id, evaluationData) => {
+    try {
+      const response = await axios.put(`http://localhost:5432/evaluations/${id}`, evaluationData);
+  
+      const evaluationId = response.data.id;
+      navigate(`/evaluations/${evaluationId}`);
+  
+      return null;
+    } catch (error) {
+      return error.response.data.message;
+    }
+  };
+  
+  // Contexto de exclusão de avaliação.
+  const deleteEvaluation = async (id) => {
+  }  
 
     return (
         <AuthContext.Provider value={{ auth, login_patient, login_expert, register_patient, register_expert, logout_patient, logout_expert, forgot_password_patient, reset_password_patient }}>
