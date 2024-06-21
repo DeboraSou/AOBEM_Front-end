@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hero. */
+.credits_hero {
+    /* border: 1px solid red; */
+    top: 0;
+    left: 0;
+    width: 99vw;
+    height: 80vh;
+}
+
+.credits_hero_container {
+    /* border: 1px solid blue; */
+    width: 90vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.credits_hero_img {
+    position: absolute;
+    opacity: 0.4;
+    width: 1100px;
+    display: block;
+    z-index: -3;
+}
+
+.credits_hero_title {
+    font-size: 4rem;
+    letter-spacing: 3px;
+    font-family: var(--font);
+    text-transform: capitalize;
+    font-weight: bolder;
+    padding: 150px 0 20px 0;
+    text-align: center;
+}
+
+.credits_hero_caption {
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Cards. */
+.credits_cards_section {
+    /* border: 1px solid red; */
+    top: 0;
+    left: 0;
+    width: 99vw;
+    height: auto;
+}
+
+.credits_cards_container {
+    /* border: 1px solid blue; */
+    width: 90vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.credits_cards {
+    text-align: center;
+    padding-bottom: 5rem;
+}
+
+.credit_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.credit_card {
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    background: rgba(104, 92, 250, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(104, 92, 250, 0.1);
+    border-radius: 20px;
+    padding: 1.5rem;
+}
+
+.credit_card_title {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+.credit_card_link {
+    color: #685cfa;
+    text-decoration: none;
+    outline: none;
+    transition: color 0.5s ease;
+}
+
+.credit_card_link:hover,
+.credit_card_link:focus {
+    color: #fb1653;
+}
+
+.credits_btn {
+    position: relative;
+    margin: 30px 0 10px 0;
+    padding: 12px 55px;
+    background: transparent;
+    font-size: 20px;
+    border: none;
+    /* border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px; */
+    outline: none;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+.credits_btn::after,
+.credits_btn::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    /* border: 3px solid #fb1653; */
+    /* border-radius: 10px; */
+    transition: all 1s ease-in;
+}
+
+.credits_btn::after {
+    top: 1px;
+    left: 1px;
+    border-top: 3px solid #047cfb;
+    border-left: 3px solid #685cfa;
+}
+
+.credits_btn::before {
+    bottom: 1px;
+    right: 1px;
+    border-bottom: 3px solid #047cfb;
+    border-right: 3px solid #685cfa;
+}
+
+.credits_btn:hover {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.credits_btn:hover::before,
+.credits_btn:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+.credits_btn_link {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--text-color);
+    position: relative;
+    z-index: 2;
+}
