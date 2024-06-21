@@ -8,7 +8,7 @@ function Map() {
                 <div className={styles.map_container}>
                     <h1 className={styles.map_title}>Obrigado pela comunicação</h1>
 
-                    <h2 className={styles.map.caption}>Em breve entraremos em contato!</h2>
+                    <h2 className={styles.map_caption}>Em breve entraremos em contato!</h2>
 
                     <div>
                         <button className={styles.map_btn}>
