@@ -113,7 +113,7 @@ function ExpertHanking() {
                     <NavLink className={styles.expert_hanking_link} to="/cadastrar" end style={({ isActive }) => { return isActive ? { color: "#fb1653" } : {}; }} aria-label="Agende a sua consulta">Agendar</NavLink>
                   </button>
                   <button className={styles.expert_hanking_button}>
-                    <Link className={styles.expert_hanking_link} to="#" aria-label="Ver mais detalhes do especialista">Ver Mais</Link>
+                    <Link className={styles.expert_hanking_link} to={'/perfil-completo/${d.id}'} aria-label="Ver mais detalhes do especialista">Ver Mais</Link>
                   </button>
                 </div>
               </div>
