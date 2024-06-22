@@ -8,7 +8,7 @@ function ExpertHanking() {
 
   const navigate = useNavigate();
 
-  const handleButtonClick = (i) => {
+  const handleButtonClick = (id) => {
     navigate(`/perfil-completo/${id}`);
   };
 
