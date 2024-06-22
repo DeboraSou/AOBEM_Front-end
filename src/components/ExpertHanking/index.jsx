@@ -1,12 +1,16 @@
 import styles from './ExpertHanking.module.css'
+import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { FaStar } from "react-icons/fa"; <FaStar />
-import { FaStarHalfAlt } from "react-icons/fa"; <FaStarHalfAlt />
-import { FaRegStar } from "react-icons/fa"; <FaRegStar />
-
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 function ExpertHanking() {
+
+  const navigate = useNavigate();
+
+  const handleButtonClick = (id) => {
+    navigate(`/perfil-completo/${id}`);
+  };
 
   const expertsHanking = [
     {
@@ -112,8 +116,8 @@ function ExpertHanking() {
                   <button className={styles.expert_hanking_primary_button}>
                     <NavLink className={styles.expert_hanking_link} to="/cadastrar" end style={({ isActive }) => { return isActive ? { color: "#fb1653" } : {}; }} aria-label="Agende a sua consulta">Agendar</NavLink>
                   </button>
-                  <button className={styles.expert_hanking_button}>
-                    <Link className={styles.expert_hanking_link} to={'/perfil-completo/${d.id}'} aria-label="Ver mais detalhes do especialista">Ver Mais</Link>
+                  <button onClick={() => handleButtonClick(expert.id)} className={styles.expert_hanking_button}>
+                    <Link className={styles.expert_hanking_link} aria-label="Ver mais detalhes do especialista">Ver Mais</Link>
                   </button>
                 </div>
               </div>
