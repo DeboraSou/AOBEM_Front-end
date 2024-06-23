@@ -34,6 +34,7 @@ import NotFound from "./pages/webPages/NotFound";
 // Páginas que requerem autorização.
 import MemberHomePage from './pages/memberDashboard/MemberHomePage';
 import MemberProfilePage from './pages/memberDashboard/MemberProfilePage';
+import FormConsult from './pages/memberDashboard/FormConsult';
 
 import ExpertHomePage from './pages/expertDashboard/ExpertHomePage';
 import ExpertProfilePage from './pages/expertDashboard/ExpertProfilePage';
@@ -96,6 +97,10 @@ function App() {
 
         <Route element={<RequireAuth allowedRoles={[ROLES.Member]} />}>
           <Route path="/membro" element={<MemberProfilePage />}></Route>
+        </Route>
+
+        <Route element={<RequireAuth allowedRoles={[ROLES.Member]} />}>
+          <Route path="/membro" element={<FormConsult />}></Route>
         </Route>
 
         {/* Páginas do especialista. */}
