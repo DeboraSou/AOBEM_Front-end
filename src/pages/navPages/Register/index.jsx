@@ -1,24 +1,13 @@
 import styles from './Register.module.css'
-import { FaGooglePlusG } from "react-icons/fa"; <FaGooglePlusG />
-import { FaFacebookF } from "react-icons/fa"; <FaFacebookF />
-import { FaInstagram } from "react-icons/fa"; <FaInstagram />
-import { FaXTwitter } from "react-icons/fa6"; <FaXTwitter />
-
-import { FaRegUser } from "react-icons/fa"; <FaRegUser />
-import { FaRegThumbsUp } from "react-icons/fa"; <FaRegThumbsUp />
-import { FaRegThumbsDown } from "react-icons/fa"; <FaRegThumbsDown />
-import { FiAlertTriangle } from "react-icons/fi"; <FiAlertTriangle />
-import { MdAlternateEmail } from "react-icons/md"; <MdAlternateEmail />
-import { ImEyeBlocked } from "react-icons/im"; <ImEyeBlocked />
-import { ImEye } from "react-icons/im"; <ImEye />
-import { HiDevicePhoneMobile } from "react-icons/hi2"; <HiDevicePhoneMobile />
-import { RiMentalHealthLine } from "react-icons/ri"; <RiMentalHealthLine />
-import { RiShieldUserLine } from "react-icons/ri"; <RiShieldUserLine />
-import { RiLockPasswordLine } from "react-icons/ri"; <RiLockPasswordLine />
-import { IoIosArrowUp } from "react-icons/io"; <IoIosArrowUp />
-import { IoIosArrowDown } from "react-icons/io"; <IoIosArrowDown />
-
-import { useEffect, useRef, useState } from 'react';
+import { FaGoogle, FaFacebookF, FaInstagram, FaRegUser, FaRegThumbsUp, FaRegThumbsDown } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FiAlertTriangle } from "react-icons/fi";
+import { MdAlternateEmail } from "react-icons/md";
+import { ImEyeBlocked, ImEye } from "react-icons/im";
+import { HiDevicePhoneMobile } from "react-icons/hi2";
+import { RiMentalHealthLine, RiShieldUserLine, RiLockPasswordLine } from "react-icons/ri";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+import { useRef, useState, useEffect } from 'react';
 import { Link, json, useNavigate } from 'react-router-dom';
 // import useAuth from '../../../useAuth';
 import useAuth from '../../../hooks/useAuth';
@@ -33,7 +22,9 @@ const PHONE_REGEX = /^(11|12|13|14|15|16|17|18|19|21|22|24|27|28|31|32|33|34|35|
 const PROFESSIONAL_REGEX = /^(CRP|CRM|CREFITO|CRESS)-\d{2}\/\d{4}$|^(CRP|CRM|CREFITO|CRESS)-\d{4}-\d{2}$|^(CRESS|CRP|CRM|CREFITO)-\d{5}$|^CRP-\d{4}-\d{2}$/;
 // Test: (CRP-00000, CRP-00/0000, CRP-0000-00), (CRM-00000, CRM-00/0000, CRM-0000-00), (CREFITO-00000, CREFITO-00/0000, CREFITO-0000-00), (CRESS-00000, CRESS-00/0000, CRESS-0000-00)
 
+// Mude para a rota de cadastro do membro.
 const REGISTER_MEMBER_URL = '/membro';
+// Mude para a rota de cadastro do especialista.
 const REGISTER_EXPERT_URL = '/especialista';
 
 function Register() {
@@ -627,7 +618,7 @@ function Register() {
 
                                 {/* Não será utilizado para o especialista. */}
                                 <div className={styles.signUp_patient_expert_social_container}>
-                                    {/* <a href="#" className={`${styles.signUp_patient_expert_a} ${styles.signUp_patient_expert_social}`}><FaGooglePlusG /></a>
+                                    {/* <a href="#" className={`${styles.signUp_patient_expert_a} ${styles.signUp_patient_expert_social}`}><FaGoogle /></a>
                                     <a href="#" className={`${styles.signUp_patient_expert_a} ${styles.signUp_patient_expert_social}`}><FaFacebookF /></a>
                                     <a href="#" className={`${styles.signUp_patient_expert_a} ${styles.signUp_patient_expert_social}`}><FaInstagram /></a>
                                     <a href="#" className={`${styles.signUp_patient_expert_a} ${styles.signUp_patient_expert_social}`}><FaXTwitter /></a> */}
@@ -898,7 +889,6 @@ function Register() {
                                             onFocus={() => setRegStatesFocus(true)}
                                             onBlur={() => setRegStatesFocus(false)}
                                             className={styles.signUp_patient_expert_select}>
-
                                             <option value="">Selecione o estado</option>
                                             <option value="AC">Acre</option>
                                             <option value="AL">Alagoas</option>
@@ -979,12 +969,12 @@ function Register() {
                                     <h1 className={styles.signUp_patient_expert_title}>Cadastrar Membro</h1>
                                 </legend>
 
-                                <div className={styles.signUp_patient_expert_social_container}>
-                                    <a href="#" className={`${styles.signUp_patient_expert_a} ${styles.signUp_patient_expert_social}`}><FaGooglePlusG /></a>
+                                {/* <div className={styles.signUp_patient_expert_social_container}>
+                                    <a href="#" className={`${styles.signUp_patient_expert_a} ${styles.signUp_patient_expert_social}`}><FaGoogle /></a>
                                     <a href="#" className={`${styles.signUp_patient_expert_a} ${styles.signUp_patient_expert_social}`}><FaFacebookF /></a>
                                     <a href="#" className={`${styles.signUp_patient_expert_a} ${styles.signUp_patient_expert_social}`}><FaInstagram /></a>
                                     <a href="#" className={`${styles.signUp_patient_expert_a} ${styles.signUp_patient_expert_social}`}><FaXTwitter /></a>
-                                </div>
+                                </div> */}
 
                                 <p className={styles.signUp_patient_expert_paragraph}>Ou use o seu e-mail para cadastrar-se</p>
 
