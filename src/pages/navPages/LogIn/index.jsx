@@ -1,14 +1,9 @@
 import styles from './LogIn.module.css'
-import { FaGoogle } from "react-icons/fa"; <FaGoogle />
-import { FaFacebookF } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import { FaGoogle, FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-
-import { MdAlternateEmail } from "react-icons/md"; <MdAlternateEmail />
-import { ImEyeBlocked } from "react-icons/im"; <ImEyeBlocked />
-import { ImEye } from "react-icons/im"; <ImEye />
-import { RiLockPasswordLine } from "react-icons/ri"; <RiLockPasswordLine />
-
+import { MdAlternateEmail } from "react-icons/md";
+import { ImEyeBlocked, ImEye } from "react-icons/im";
+import { RiLockPasswordLine } from "react-icons/ri";
 import { useRef, useState, useEffect, useContext } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
@@ -20,7 +15,11 @@ import toast, { Toaster } from 'react-hot-toast';
 
 // const LOGIN_MEMBER_URL = '/auth';
 // const LOGIN_EXPERT_URL = '/auth';
+
+// Mude para a rota de login do membro.
 const LOGIN_MEMBER_URL = '/membro';
+
+// Mude para a rota de login do especialista.
 const LOGIN_EXPERT_URL = '/especialista';
 
 function LogIn() {
@@ -408,12 +407,12 @@ function LogIn() {
                                     <h1 className={styles.sign_patient_expert_title}>Portal Membro</h1>
                                 </legend>
 
-                                <div className={styles.sign_patient_expert_social_container}>
+                                {/* <div className={styles.sign_patient_expert_social_container}>
                                     <a href="#" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_social}`}><FaGoogle /></a>
                                     <a href="#" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_social}`}><FaFacebookF /></a>
                                     <a href="#" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_social}`}><FaInstagram /></a>
                                     <a href="#" className={`${styles.sign_patient_expert_a} ${styles.sign_patient_expert_social}`}><FaXTwitter /></a>
-                                </div>
+                                </div> */}
 
                                 <p className={styles.sign_patient_expert_paragraph}>Ou use a sua conta para entrar</p>
 
