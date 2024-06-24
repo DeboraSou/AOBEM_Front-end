@@ -68,9 +68,9 @@ function FullProfile() {
                     <p title='Abordagem'> {psychologist.approach}</p>
                     <p title='Biografia'> {psychologist.bio}</p>
                     <ul title='Serviços'>
-                        {psychologist.services.map((service, index) => (
-                            <li key={index}>{service}</li>
-                        ))}
+                        <li> {psychologist.service}</li>
+                        <li> {psychologist.service2}</li>
+                        <li> {psychologist.service3}</li>
                     </ul>
                     <p title='Gênero'> {psychologist.gender}</p>
                     <p title='Estado'> {psychologist.state}</p>
