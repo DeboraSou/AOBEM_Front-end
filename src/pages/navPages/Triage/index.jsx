@@ -1,5 +1,9 @@
-import ScrollTop from '../../../components/ScrollTop';
 import styles from './Triagem.module.css'
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import ScrollTop from '../../../components/ScrollTop';
+import axios from '../../../api/axios'
+import toast, { Toaster } from 'react-hot-toast';
 
 function Triage() {
 
