@@ -1,62 +1,428 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
-.member_profile_section {
-    border: 1px solid red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -16px;
-    width: 100%;
-    height: 20vh;
+* {
+    font-family: "Ubuntu", sans-serif;
 }
 
-.member_profile_cotainer {
-    border: 1px solid yellow;
+:root {
+    --blue: #2a2185;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+.container {
+    padding-left: 300px;
+    padding-right: 10px;
+    width: 100%;
+
+}
+
+/* SIDE BAR */
+.navigation {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow: hidden;
+
+}
+
+.navigation.active {
+    width: 80px;
+}
+
+.iconlogo {
+    margin: 15px 0 0 35px;
+
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered {
+    background-color: var(--white);
+}
+
+.navigation ul li:nth-child(1) {
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+/* UTILIZA A TAG A */
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+    color: var(--blue);
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+}
+
+.navigation ul li a .icon i {
+    font-size: 1.75rem;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.allpagecenter {
+    width: 1600px;
+    display: inline;
+}
+
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.profile {
+    flex: 1;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    height: max-content;
+    display: flex;
+    margin-left: 10px;
+    width: 99.5%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.profileHeader {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 15px;
+    text-align: center;
+    position: relative;
+    width: 100px;
+    margin: auto;
+}
+
+.profileImg {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+
+.profileTextContainer {
+    line-height: 1.5;
+}
+
+.profileTitle {
+    font-size: 25px;
+}
+
+.profileExpert {
+    font-size: 13px;
+}
+
+.profileEmail {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.menu {
+    margin: 0 20px;
+}
+
+.menuLink {
+    display: block;
+    text-decoration: none;
+    color: #768499;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+#menuIcon {
+    margin-right: 10px;
+    background-color: #536dfe;
+}
+
+.menuLink:first-child {
+    color: #fff;
+    background-color: #536dfe;
+}
+
+.menuLink:hover {
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+.menuLink:first-child:hover {
+    color: #fff;
+}
+
+.account {
+    flex: 2;
+    margin-left: 10px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;
+    height: max-content;
+    padding-bottom: 1px;
+}
+
+.accountHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #768499;
+}
+
+.accountTitle {
+    font-size: 20px;
+    color: #1e293b;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.btnContainer {
+    margin-right: 5px;
+}
+
+.btnCancel {
+    width: 8em;
+    height: 3em;
+    cursor: pointer;
+    border: 1px solid #768499;
+    border-radius: 2em;
+    color: #1e293b;
+    font-weight: bold;
+    margin-right: 5px;
+    background-color: #fff;
+    transition-duration: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.btnCancel:hover {
+    background-color: #f1f5f9;
+}
+
+/* MUDEI AQUI */
+.btnSave {
+    width: 8em;
+    height: 3em;
+    cursor: pointer;
+    border: 1px solid #458ff6;
+    border-radius: 2em;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 5px;
+    background-color: #536dfe;
+    transition-duration: 1s;
+    box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* AQUI TBM   */
+.btnSave:hover {
+    background: linear-gradient(45deg, #685cfa, #5044d4, #433aa3, #685cfa);
+    background-size: 200% 200%;
+    animation: color 4s ease-in-out infinite;
+    background-color: #536dfe;
+}
+
+.accountEdit {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.inputContainer {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-    width: 90%;
-    /* height: 100%; */
+    margin: 0 20px;
 }
 
-.member_profile_title {
-    color: #00919C;
-    text-transform: uppercase;
-    font-size: 2em;
-    font-weight: bold;
+#bio {
+    height: 60px;
 }
 
-.member_profile_paragraph {
-    font-size: 1em;
-    /*14px*/
-    font-weight: 300;
-    letter-spacing: 0.5px;
-    padding: 15px 0;
+#bioComplete {
+    height: 120px;
 }
 
-.member_profile_btn {
-    color: #F7F6FB;
-    background: #002782;
-    font-size: 1em;
-    /*12px*/
-    font-weight: bold;
-    padding: 12px 55px;
-    /* margin: 20px; */
-    border-radius: 10px;
-    border: 1px solid #002782;
+#selects {
+    width: 100%;
+    display: flex;
+    border-radius: 5px;
+    height: 25px;
+    border: 1.5px solid #768499;
+    color: #768499;
+}
+
+.inputContainer label {
+    color: #768499;
+    font-size: 14px;
+}
+
+.inputContainer input {
+    margin-top: 2px;
+    height: 25px;
+    border: 1.5px solid #768499;
+    border-radius: 2em;
+    padding: 10px;
+    color: #768499;
+    width: 50%;
+    font-size: 15px;
+}
+
+.inputContainer input:focus {
     outline: none;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: transform 88ms ease-in;
+    background: linear-gradient(45deg, #685cfa, #5044d4, #433aa3, #685cfa);
+    background-size: 200% 200%;
+    animation: color 8s ease-in-out infinite;
+    color: var(--white);
 }
 
-.member_profile_btn:hover {
-    transform: scale(0.90);
+.inputContainer textarea {
+    display: block;
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    border: 1.5px solid #768499;
+    border-radius: 5px;
+    color: #768499;
+}
+
+.inputContainer textarea:focus {
+    outline: none;
+    background: linear-gradient(45deg, #685cfa, #5044d4, #433aa3, #685cfa);
+    background-size: 200% 200%;
+    animation: color 8s ease-in-out infinite;
+    color: var(--white);
+}
+
+@media screen and (max-width:768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .profile {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+
+    .account {
+        margin: 0;
+    }
+
+    .accountHeader {
+        flex-direction: column;
+    }
+
+    .accountEdit {
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .inputContainer {
+        margin: 10px;
+    }
+
+    .inputContainer input {
+        margin-right: 10px;
+    }
+
+    .inputContainer textarea {
+        display: block;
+        width: auto;
+        margin-right: 10px;
+
+    }
+}
+
+
+.upload {
+    text-align: center;
+}
+
+.profileHeader .round {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #258bff;
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.upload .round input[type="file"] {
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+}
+
+input[type=file]::-webkit-file-upload-button {
+    cursor: pointer;
 }
