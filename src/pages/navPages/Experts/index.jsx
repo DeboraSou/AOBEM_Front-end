@@ -3,8 +3,8 @@ import { NavLink, Link, useNavigate } from 'react-router-dom';
 import ScrollTop from '../../../components/ScrollTop';
 import { useState, useEffect } from 'react';
 import { FaStar, FaStarHalfAlt, FaRegStar, FaSearch } from "react-icons/fa";
-import { MdFilterAlt } from "react-icons/md"; <MdFilterAlt />
-import { FaSliders } from "react-icons/fa6"; <FaSliders />
+import { MdFilterAlt } from "react-icons/md";
+import { FaSliders } from "react-icons/fa6";
 import axios from '../../../api/axios'
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -28,6 +28,7 @@ function Experts() {
     const [loading, setLoading] = useState(false);
     const [experts, setExperts] = useState([]);
     const [page, setPage] = useState(1);
+    const [hasMore, setHasMore] = useState(true);
 
     useEffect(() => {
         fetchData();
@@ -38,25 +39,42 @@ function Experts() {
         try {
             // Mude para a rota do formulário do especialista, a mesma rota que está no FullProfile.jsx.
             const response = await axios.get('http://localhost:3003/full-profile');
-            setExperts(response.data);
-            toast.success("Especialistas carregados!", {
-                position: 'top-right !important',
-                style: {
-                    background: '#001908',
-                    color: '#F7F6FB',
-                    width: '260px',
-                    height: '50px',
-                    fontSize: '16px',
-                    borderLeft: '5px solid #00ff52',
-                }
-
-            });
-            console.log("%cEspecialistas carregados!", 'color: #00ff52; background-color: #001908');
+            const uniqueExperts = removeDuplicates([...experts, ...response.data], 'id');
+            setExperts(uniqueExperts);
+            if (response.data.length > 0) {
+                toast.success("Especialistas carregados!", {
+                    position: 'top-right',
+                    style: {
+                        background: '#001908',
+                        color: '#F7F6FB',
+                        width: '260px',
+                        height: '50px',
+                        fontSize: '16px',
+                        borderLeft: '5px solid #00ff52',
+                    }
+                });
+                console.log("%cEspecialistas carregados!", 'color: #00ff52; background-color: #001908');
+            } else {
+                toast.error("Nenhum especialista encontrado.", {
+                    icon: '⚠️',
+                    position: 'top-right',
+                    style: {
+                        background: '#191900',
+                        color: '#F7F6FB',
+                        width: '300px',
+                        height: '50px',
+                        fontSize: '16px',
+                        borderLeft: '5px solid #ffff00',
+                    },
+                    iconSize: '20px',
+                });
+                console.log("%cNenhum especialista encontrado.", 'color: #ffff00; background-color: #191900');
+            }
         } catch (error) {
             console.error('Erro ao buscar especialistas:', error);
             toast.error("Erro ao buscar especialistas.", {
                 icon: '⚠️',
-                position: 'top-right !important',
+                position: 'top-right',
                 style: {
                     background: '#191900',
                     color: '#F7F6FB',
@@ -74,7 +92,7 @@ function Experts() {
     };
 
     const handleScroll = () => {
-        if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight && !loading) {
+        if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight && !loading && hasMore) {
             setPage(prevPage => prevPage + 1);
             fetchMoreExperts();
         }
@@ -84,13 +102,19 @@ function Experts() {
         setLoading(true);
         try {
             // Mude para a rota do formulário do especialista, a mesma rota que está no FullProfile.jsx.
-            const response = await axios.get('http://localhost:3003/full-profile', { params: { _page: page, _limit: 10 } });
-            setExperts(prevExperts => [...prevExperts, ...response.data]);
+            const response = await axios.get('http://localhost:3003/full-profile', {
+                params: { _page: page + 1, _limit: 10 }
+            });
+            const uniqueExperts = removeDuplicates([...experts, ...response.data], 'id');
+            setExperts(uniqueExperts);
+            if (response.data.length === 0) {
+                setHasMore(false);
+            }
         } catch (error) {
             console.error('Erro ao carregar mais especialistas:', error);
             toast.error("Erro ao carregar mais especialistas.", {
                 icon: '😢',
-                position: 'top-right !important',
+                position: 'top-right',
                 style: {
                     background: '#19040b',
                     color: '#F7F6FB',
@@ -110,33 +134,42 @@ function Experts() {
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [loading]);
+    }, [loading, hasMore]);
 
-    const renderStars = (rating) => {
-        const fullStars = Math.floor(rating);
-        const halfStar = rating % 1 !== 0;
-        const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
-        return (
-            <>
-                {Array(fullStars).fill(<FaStar className={styles.expert_all_star} />)}
-                {halfStar && <FaStarHalfAlt className={styles.expert_all_star} />}
-                {Array(emptyStars).fill(<FaRegStar className={styles.expert_all_star} />)}
-            </>
-        );
+    const removeDuplicates = (arr, key) => {
+        return [...new Map(arr.map(item => [item[key], item])).values()];
     };
 
-    const filteredExperts = experts.filter((experts) => {
-        const matchesSearchTerm = experts.name.toLowerCase().includes(searchTerm.toLowerCase());
-        const matchesSpecialty = specialtyFilter === 'all' || experts.specialty === specialtyFilter;
-        const matchesApproach = approachFilter === 'all' || experts.approach === approachFilter;
-        const matchesGender = genderFilter === 'all' || experts.gender === genderFilter;
-        const matchesLocation = locationFilter === 'all' || experts.state === locationFilter || experts.city === locationFilter;
-        const matchesServiceType = serviceTypeFilter === 'all' || (serviceTypeFilter === 'online' ? experts.online : !experts.online);
-        const matchesAccessibility = !accessibilityFilter || experts.accessibility;
-        const matchesModalityTypeFilter = modalityTypeFilter === 'all' || experts.modality === modalityTypeFilter;
+    const handleSearchChange = (event) => {
+        setSearchTerm(event.target.value);
+    };
+
+    const filteredExperts = experts.filter((expert) => {
+        const matchesSearchTerm = expert.name && expert.name.toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesSpecialty = specialtyFilter === 'all' || expert.specialty === specialtyFilter;
+        const matchesApproach = approachFilter === 'all' || expert.approach === approachFilter;
+        const matchesGender = genderFilter === 'all' || expert.gender === genderFilter;
+        const matchesLocation = locationFilter === 'all' || expert.state === locationFilter || expert.city === locationFilter;
+        const matchesServiceType = serviceTypeFilter === 'all' || (serviceTypeFilter === 'online' ? expert.online : !expert.online);
+        const matchesAccessibility = !accessibilityFilter || expert.accessibility;
+        // const matchesAccessibility = accessibilityFilter === 'all' || expert.accessibility === (accessibilityFilter === 'yes');
+        const matchesModalityTypeFilter = modalityTypeFilter === 'all' || expert.modality === modalityTypeFilter;
 
         return matchesSearchTerm && matchesSpecialty && matchesApproach && matchesGender && matchesLocation && matchesServiceType && matchesAccessibility && matchesModalityTypeFilter;
     });
+
+    // const renderStars = (rating) => {
+    //     const fullStars = Math.floor(rating);
+    //     const halfStar = rating % 1 !== 0;
+    //     const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+    //     return (
+    //         <>
+    //             {Array(fullStars).fill(<FaStar className={styles.expert_all_star} />)}
+    //             {halfStar && <FaStarHalfAlt className={styles.expert_all_star} />}
+    //             {Array(emptyStars).fill(<FaRegStar className={styles.expert_all_star} />)}
+    //         </>
+    //     );
+    // };    
 
     return (
         <>
@@ -510,6 +543,18 @@ function Experts() {
                                                 <option value="Hibrido">Híbrido</option>
                                             </select>
                                         </label>
+                                        {/* <label>
+                                            <select
+                                                value={accessibilityFilter}
+                                                onChange={(e) => setAccessibilityFilter(e.target.value)}
+                                                className={styles.expert_search_select}
+                                            >
+                                                <option value="all" disabled selected>Escolha a Acessibilidade</option>
+                                                <option value="all">Todas</option>
+                                                <option value="yes">Sim</option>
+                                                <option value="no">Não</option>
+                                            </select>
+                                        </label> */}
                                         <label>
                                             <input
                                                 type="checkbox"
@@ -543,19 +588,19 @@ function Experts() {
                                                     <p title='Registro Profissional no Conselho Regional de Psicologia (CRP)' className={styles.expert_all_rcp}> {experts.rcp}</p>
                                                 </div>
                                                 <div className={styles.expert_all_p}>
-                                                    <p title='Avaliação' className={styles.expert_all_paragraph}>
+                                                    {/* <p title='Avaliação' className={styles.expert_all_paragraph}>
                                                         <span>
                                                             {renderStars(experts.rating)}
                                                             <span>{experts.rating.toFixed(1)}</span>
                                                         </span>
-                                                    </p>
+                                                    </p> */}
                                                     <p title='Abordagem' className={`${styles.expert_all_paragraph} ${styles.expert_all_approach}`}> {experts.approach}</p>
                                                     <p title='Breve Biografia' className={styles.expert_all_paragraph}> {experts.brief_bio}</p>
                                                 </div>
                                                 <ul title='Serviços' className={styles.expert_all_ul}>
-                                                    {experts.services.map((service, index) => (
-                                                        <li className={styles.expert_all_li} key={index}>{service}</li>
-                                                    ))}
+                                                    <li className={styles.expert_all_li}> {experts.service}</li>
+                                                    <li className={styles.expert_all_li}> {experts.service2}</li>
+                                                    <li className={styles.expert_all_li}> {experts.service3}</li>
                                                 </ul>
                                                 <div className={styles.expert_all_button_container}>
                                                     <button className={styles.expert_all_primary_button}>
